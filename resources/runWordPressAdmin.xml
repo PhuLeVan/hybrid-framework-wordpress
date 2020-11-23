@@ -2,7 +2,7 @@
 <suite name="WordPress - Admin" parallel="false">
   <test name="Run on Chrome">
     <classes>
-      <class name="com.wordpress.posts.Post_01_New_Edit_Delete"/>
+      <class name="com.wordpress.posts.Level_01_Login_Repeat_Yourself"/>
     </classes>
   </test> 
 </suite> 

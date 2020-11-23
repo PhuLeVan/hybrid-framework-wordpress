@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
+	<classpathentry kind="src" path="javaCore"/>
 	<classpathentry kind="src" path="testcases"/>
 	<classpathentry kind="src" path="testdatas"/>
 	<classpathentry kind="src" path="actions"/>
