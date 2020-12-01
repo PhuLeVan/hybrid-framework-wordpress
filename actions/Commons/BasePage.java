@@ -15,6 +15,9 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage {
+	public static BasePage getBasePage() {
+		return new BasePage();
+	}
 	
 	private long longTimeout = 30;
 	
@@ -171,7 +174,7 @@ public class BasePage {
 	}
 	
 	public String getElementText(WebDriver driver, String locator) {
-		return getWebElement(driver, locator).getText();
+		return getWebElement(driver, locator).getText().trim();
 	}
 	
 	public String getElementAttribute(WebDriver driver, String locator, String attributeName) {
