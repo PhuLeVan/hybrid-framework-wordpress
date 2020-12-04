@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<suite name="WordPress - Admin" parallel="false">
-  <test name="Run on Chrome">
-    <classes>
-      <class name="com.wordpress.posts.Level_02_Login_BasePage_03"/>
-    </classes>
-  </test> 
-</suite> 
