@@ -25,7 +25,7 @@ public class BasePage {
 		driver.get(pageUrl);
 	}
 	
-	public String getPageTitle(WebDriver driver ) {
+	public String getPageTitle(WebDriver driver) {
 		return driver.getTitle();
 	}
 	
@@ -133,7 +133,7 @@ public class BasePage {
 		select.selectByVisibleText(valueItem);
 	}
 	
-	public String getselectItemInDropdown(WebDriver driver, String locator, String valueItem) {
+	public String getSelectItemInDropdown(WebDriver driver, String locator) {
 		Select select = new Select(getWebElement(driver, locator));
 		return select.getFirstSelectedOption().getText();
 	}
