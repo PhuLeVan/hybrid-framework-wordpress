@@ -1,8 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="WordPress - Admin" parallel="false">
-  <test name="Run on Chrome">
-    <classes>
-      <class name="com.nopcommerce.users.Level_03_Register_Login_Page_Object"/>
-    </classes>
-  </test> 
+	<test name="Run on FIREFOX UI">
+		<parameter name="browser" value="firefox_ui" />
+		<classes>
+			<class
+				name="com.nopcommerce.users.Level_04_Register_Login_Multiple_Browsers" />
+		</classes>
+	</test>
+
+	<test name="Run on CHROME UI">
+		<parameter name="browser" value="chrome_ui" />
+		<classes>
+			<class
+				name="com.nopcommerce.users.Level_04_Register_Login_Multiple_Browsers" />
+		</classes>
+	</test>
+
+<!-- 	<test name="Run on FIREFOX HEADLESS"> -->
+<!-- 		<parameter name="browser" value="firefox_headless" /> -->
+<!-- 		<classes> -->
+<!-- 			<class -->
+<!-- 				name="com.nopcommerce.users.Level_04_Register_Login_Multiple_Browsers" /> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+
+<!-- 	<test name="Run on CHROME HEADLESS"> -->
+<!-- 		<parameter name="browser" value="chrome_headless" /> -->
+<!-- 		<classes> -->
+<!-- 			<class -->
+<!-- 				name="com.nopcommerce.users.Level_04_Register_Login_Multiple_Browsers" /> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+
+	<test name="Run on EDGE CHROMIUM">
+		<parameter name="browser" value="edge_chromium" />
+		<classes>
+			<class
+				name="com.nopcommerce.users.Level_04_Register_Login_Multiple_Browsers" />
+		</classes>
+	</test>
+
 </suite> 

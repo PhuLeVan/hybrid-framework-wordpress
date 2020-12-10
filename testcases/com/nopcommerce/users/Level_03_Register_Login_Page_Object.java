@@ -1,21 +1,22 @@
 package com.nopcommerce.users;
 
+import java.util.Collections;
+import java.util.Random;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import pageObjects.CustomerInfoPageObject;
 import pageObjects.HomePageObject;
 import pageObjects.LoginPageObject;
 import pageObjects.RegisterPageObject;
-
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-
-import java.util.Random;
-import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.Assert;
 
 
 public class Level_03_Register_Login_Page_Object {
@@ -31,15 +32,21 @@ public class Level_03_Register_Login_Page_Object {
 	String month = "October";
 	String year = "1995";
 	String email = "robertteo" + getRandomNumber() + "@gmail.com";
-	String company = "RobertTeo";
+	String companyName = "RobertTeo";
 	String password = "123456";
 	String confirmPassword = "123456";
 	
-	@BeforeTest
-	public void beforeTest() {
+	@BeforeClass	
+	public void beforeClass() {
 		System.setProperty("webdriver.chrome.driver", projectFolder + "\\browserDriver\\chromedriver.exe");
-		driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		ChromeOptions options = new ChromeOptions();    
+		options.setExperimentalOption("useAutomationExtension", false);
+		options.setExperimentalOption("excludeSwitches", 
+		        Collections.singletonList("enable-automation"));
+		driver = new ChromeDriver(options);
+		//System.setProperty("webdriver.gecko.driver", projectFolder + "\\browserDriver\\geckodriver.exe");
+		//driver = new FirefoxDriver();
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		driver.get("https://demo.nopcommerce.com/");
 		homePage = new HomePageObject(driver);
@@ -49,6 +56,8 @@ public class Level_03_Register_Login_Page_Object {
 	public void TC_01_Register() {
 		homePage.clickToRegisterLink();
 		
+		homePage.sleepInSecond(1);
+		
 		registerPage = new RegisterPageObject(driver);
 		
 		registerPage.clickToGenderMaleRadioButton();
@@ -57,15 +66,15 @@ public class Level_03_Register_Login_Page_Object {
 		
 		registerPage.inputToLastnameTextbox(lastName); 
 		
-		registerPage.selectDayDropdown(day); 
+		registerPage.selectDayDropdown("10"); 
 		
-		registerPage.selectMonthDropdown(month); 
+		registerPage.selectMonthDropdown("October"); 
 		
-		registerPage.selectYearDropdown(year); 
+		registerPage.selectYearDropdown("1995"); 
 		
 		registerPage.inputToEmailTextbox(email); 
 		
-		registerPage.inputToCompanyTextbox(company); 
+		registerPage.inputToCompanyTextbox(companyName); 
 		
 		registerPage.inputToPasswordTextbox(password); 
 		
@@ -76,6 +85,9 @@ public class Level_03_Register_Login_Page_Object {
 		Assert.assertEquals(registerPage.getRegisterSuccessMessage(), "Your registration completed"); 
 		
 		registerPage.clickToLogoutLink();
+		
+		//registerPage.clickToLogoutLinkJS();
+		
 	}
 	
 	@Test
@@ -97,29 +109,31 @@ public class Level_03_Register_Login_Page_Object {
 		Assert.assertTrue(homePage.isMyAccountLinkDisplayed()); 
 		
 		Assert.assertTrue(homePage.isLogoutLinkDisplayed()); 
+		
+		homePage.clickToMyAccountLink();
+		
 	}
 	
 	@Test
 	public void TC_03_View_My_account() {
-		homePage.clickToMyAccountLink();
 		
 		customerInfoPage = new CustomerInfoPageObject(driver);
 		
 		Assert.assertTrue(customerInfoPage.isGenderMaleRadioButtonSelected());
 		
-		Assert.assertEquals(customerInfoPage.getFirstNameTextboxValue(), "firstName");
+		Assert.assertEquals(customerInfoPage.getFirstNameTextboxValue(),firstName);
 		
-		Assert.assertEquals(customerInfoPage.getLastNameTextboxValue(), lastName);
+		Assert.assertEquals(customerInfoPage.getLastNameTextboxValue(),lastName);
 		
-		Assert.assertEquals(customerInfoPage.getSelectedTextInDaydropdown(), day);
+		Assert.assertEquals(customerInfoPage.getSelectedTextInDaydropdown(),"10");
 		
-		Assert.assertEquals(customerInfoPage.getSelectedTextInMonthdropdown(), month);
+		Assert.assertEquals(customerInfoPage.getSelectedTextInMonthdropdown(),"October");
 		
-		Assert.assertEquals(customerInfoPage.getSelectedTextInYeardropdown(), year);
+		Assert.assertEquals(customerInfoPage.getSelectedTextInYeardropdown(),"1995");
 		
-		Assert.assertEquals(customerInfoPage.getEmailTextboxValue(), email);
+		Assert.assertEquals(customerInfoPage.getEmailTextboxValue(),email);
 		
-		Assert.assertEquals(customerInfoPage.getCompanyTextboxValue(), company);
+		Assert.assertEquals(customerInfoPage.getCompanyTextboxValue(),companyName);
 		
 		Assert.assertTrue(customerInfoPage.isNewsLetterCheckboxSelected());
 		
@@ -132,7 +146,7 @@ public class Level_03_Register_Login_Page_Object {
 		return random.nextInt(999999);
 	}
 
-	@AfterTest
+	@AfterClass
 	public void afterClass() {
 		driver.quit();
 	}

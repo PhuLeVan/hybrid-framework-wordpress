@@ -1,7 +1,7 @@
 package PageUIs;
 
 public class RegisterPageUI {
-	public static final String GENDER_MALE_RADIO_BUTTON = "//input[@id='gender-male']";
+	public static final String GENDER_MALE_RADIO_BUTTON = "//span[@class='male']";
 	public static final String FIRSTNAME_TEXTBOX = "//input[@id='FirstName']";
 	public static final String LASTNAME_TEXTBOX = "//input[@id='LastName']";
 	public static final String DAY_DROPDOWN = "//select[@name='DateOfBirthDay']";
@@ -14,5 +14,4 @@ public class RegisterPageUI {
 	public static final String REGISTER_BUTTON = "//input[@id='register-button']";
 	public static final String REGISTER_SUCCESS_MESSAGE = "//div[@class='result']";
 	public static final String LOGOUT_LINK = "//a[@class='ico-logout']";
-	
 }

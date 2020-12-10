@@ -6,7 +6,7 @@ import Commons.BasePage;
 import PageUIs.HomePageUI;
 
 public class HomePageObject extends BasePage {
-	WebDriver driver;
+	private WebDriver driver;
 	
 	public HomePageObject(WebDriver driver) {
 		this.driver = driver;

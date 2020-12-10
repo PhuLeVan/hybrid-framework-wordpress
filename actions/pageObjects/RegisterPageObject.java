@@ -64,7 +64,7 @@ public class RegisterPageObject extends BasePage{
 	}
 
 	public void clickToRegisterButton() {
-		waitForElementVisible(driver, RegisterPageUI.REGISTER_BUTTON);
+		waitForElementClickable(driver, RegisterPageUI.REGISTER_BUTTON);
 		clickToElement(driver, RegisterPageUI.REGISTER_BUTTON);
 	}
 
@@ -74,8 +74,12 @@ public class RegisterPageObject extends BasePage{
 	}
 
 	public void clickToLogoutLink() {
-		waitForElementVisible(driver, RegisterPageUI.LOGOUT_LINK);
+		waitForElementClickable(driver, RegisterPageUI.LOGOUT_LINK);
 		clickToElement(driver, RegisterPageUI.LOGOUT_LINK);
 	}
-
+	
+	public void clickToLogoutLinkJS() {
+		waitForElementClickable(driver, RegisterPageUI.LOGOUT_LINK);
+		clickToElementByJS(driver, RegisterPageUI.LOGOUT_LINK);
+	}
 }

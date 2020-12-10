@@ -17,16 +17,16 @@ public class CustomerInfoPageObject extends BasePage{
 		return isElementSelected(driver, CustomerInfoPageUI.GENDER_MALE_RADIO_BUTTON);
 	}
 
+	public String getFirstNameTextboxValue() {
+		waitForElementVisible(driver, CustomerInfoPageUI.FIRSTNAME_TEXTBOX);
+		return getElementAttribute(driver, CustomerInfoPageUI.FIRSTNAME_TEXTBOX, "value");
+	}
+
 	public String getLastNameTextboxValue() {
 		waitForElementVisible(driver, CustomerInfoPageUI.LASTNAME_TEXTBOX);
 		return getElementAttribute(driver, CustomerInfoPageUI.LASTNAME_TEXTBOX, "value");
 	}
-
-	public String getFirstNameTextboxValue() {
-		waitForElementInvisible(driver, CustomerInfoPageUI.FIRSTNAME_TEXTBOX);
-		return getElementAttribute(driver, CustomerInfoPageUI.FIRSTNAME_TEXTBOX, "value");
-	}
-
+	
 	public String getSelectedTextInDaydropdown() {
 		waitForElementVisible(driver, CustomerInfoPageUI.DAY_DROPDOWN);
 		return getSelectItemInDropdown(driver, CustomerInfoPageUI.DAY_DROPDOWN);

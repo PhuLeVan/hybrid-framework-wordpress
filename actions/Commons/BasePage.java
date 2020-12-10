@@ -19,7 +19,7 @@ public class BasePage {
 		return new BasePage();
 	}
 	
-	private long longTimeout = 30;
+	private long longTimeout = 15;
 	
 	public void openPageUrl (WebDriver driver, String pageUrl) {
 		driver.get(pageUrl);
@@ -115,6 +115,9 @@ public class BasePage {
 	}
 	
 	public void clickToElement(WebDriver driver, String locator) {
+		if(driver.toString().toLowerCase().contains("edge")) {
+			sleepInMiliSecond(500);
+		}
 		getWebElement(driver, locator).click();
 	}
 	
@@ -168,6 +171,14 @@ public class BasePage {
 	public void sleepInSecond(long timeout) {
 		try {
 			Thread.sleep(timeout * 1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void sleepInMiliSecond(long timeout) {
+		try {
+			Thread.sleep(timeout);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
