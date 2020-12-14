@@ -1,0 +1,5 @@
+package Commons;
+
+public enum Browser {
+	CHROME_UI, FIREFOX_UI, EDGE_CHROMIUM, SAFARI, CHROME_HEADLESS, FIREFOX_HEADLESS
+}

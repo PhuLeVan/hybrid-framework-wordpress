@@ -126,6 +126,9 @@ public class BasePage {
 	}
 	
 	public void sendkeyToElement(WebDriver driver, String locator, String value) {
+		if(driver.toString().toLowerCase().contains("chrome") || driver.toString().toLowerCase().contains("edge")) {
+			sleepInMiliSecond(500);
+		}
 		WebElement element = getWebElement(driver, locator);
 		element.clear();
 		element.sendKeys(value);
