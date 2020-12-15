@@ -16,7 +16,7 @@ import pageObjects.HomePageObject;
 import pageObjects.LoginPageObject;
 import pageObjects.RegisterPageObject;
 
-public class Level_04_Register_Login_Multiple_Browsers extends BaseTest {
+public class Level_05_Register_Login_Generator_Manager extends BaseTest {
 	WebDriver driver;
 	HomePageObject homePage;
 	RegisterPageObject registerPage;

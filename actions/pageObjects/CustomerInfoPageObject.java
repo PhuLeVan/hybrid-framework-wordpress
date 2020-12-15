@@ -57,9 +57,10 @@ public class CustomerInfoPageObject extends BasePage{
 		return isElementSelected(driver, CustomerInfoPageUI.NEWSLETTER_CHECKBOX);
 	}
 
-	public void clickToLogoutLink() {
+	public HomePageObject clickToLogoutLink() {
 		waitForElementClickable(driver, CustomerInfoPageUI.LOGOUT_LINK);
 		clickToElement(driver, CustomerInfoPageUI.LOGOUT_LINK);
+		return GeneratorManagerPage.getHomepage(driver);
 	}
 
 
