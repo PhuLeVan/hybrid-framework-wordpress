@@ -10,18 +10,28 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import Commons.BaseTest;
+import pageObjects.AddressesPageObject;
 import pageObjects.CustomerInfoPageObject;
 import pageObjects.GeneratorManagerPage;
 import pageObjects.HomePageObject;
 import pageObjects.LoginPageObject;
+import pageObjects.MyProductReviewsPageObject;
+import pageObjects.OrdersPageObject;
 import pageObjects.RegisterPageObject;
+import pageObjects.RewardPointsPageObject;
 
-public class Level_05_Register_Login_Generator_Manager extends BaseTest {
+public class Level_06_Register_Login_Switch_Page_Type extends BaseTest {
 	WebDriver driver;
 	HomePageObject homePage;
 	RegisterPageObject registerPage;
 	LoginPageObject loginPage;
 	CustomerInfoPageObject customerInfoPage;
+	AddressesPageObject addressesPage;
+	OrdersPageObject ordersPage;
+	RewardPointsPageObject rewardPointsPage;
+	MyProductReviewsPageObject myProductReviewsPage;
+	
+	
 	String firstName = "Robert";
 	String lastName = "Teo";
 	String day = "10";
@@ -114,8 +124,21 @@ public class Level_05_Register_Login_Generator_Manager extends BaseTest {
 		
 		Assert.assertTrue(customerInfoPage.isNewsLetterCheckboxSelected());
 		
-		homePage = customerInfoPage.clickToLogoutLink(); 
+	}
+	
+	@Test
+	public void TC_04_Switch_Page() {
+		// Customer Info -> Reward Points
+		rewardPointsPage = customerInfoPage.clickToRewardPointsLink(driver);
 		
+		// Reward Points -> Addresses
+		addressesPage = rewardPointsPage.clickToAddressesLink(driver);
+		
+		// Addresses -> Orders
+		ordersPage = addressesPage.clickToOrdersLink(driver);
+		
+		// Orders -> My Product Reviews
+		myProductReviewsPage = ordersPage.clickToMyProductReviewsLink(driver);
 	}
 	
 	public int getRandomNumber() {

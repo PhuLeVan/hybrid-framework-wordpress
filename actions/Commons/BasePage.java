@@ -14,6 +14,15 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import PageUIs.BasePageUI;
+import PageUIs.HomePageUI;
+import pageObjects.AddressesPageObject;
+import pageObjects.CustomerInfoPageObject;
+import pageObjects.GeneratorManagerPage;
+import pageObjects.MyProductReviewsPageObject;
+import pageObjects.OrdersPageObject;
+import pageObjects.RewardPointsPageObject;
+
 public class BasePage {
 	public static BasePage getBasePage() {
 		return new BasePage();
@@ -366,6 +375,36 @@ public class BasePage {
 	public void waitForElementClickable(WebDriver driver, String locator) {
 		WebDriverWait explicitWait = new WebDriverWait(driver, longTimeout);
 		explicitWait.until(ExpectedConditions.elementToBeClickable(getByXpath(locator)));
+	}
+	
+	public CustomerInfoPageObject clickToCustomerInfoLink(WebDriver driver) {
+		waitForElementClickable(driver, BasePageUI.CUSTOMER_INFO_LINK);
+		clickToElement(driver, BasePageUI.CUSTOMER_INFO_LINK);
+		return GeneratorManagerPage.getCustomerInfoPage(driver);
+	}
+	
+	public AddressesPageObject clickToAddressesLink(WebDriver driver) {
+		waitForElementClickable(driver, BasePageUI.ADDRESSES_LINK);
+		clickToElement(driver, BasePageUI.ADDRESSES_LINK);
+		return GeneratorManagerPage.getAddressesPage(driver);
+	}
+	
+	public OrdersPageObject clickToOrdersLink(WebDriver driver) {
+		waitForElementClickable(driver, BasePageUI.ORDERS_LINK);
+		clickToElement(driver, BasePageUI.ORDERS_LINK);
+		return GeneratorManagerPage.getOrdersPage(driver);
+	}
+	
+	public MyProductReviewsPageObject clickToMyProductReviewsLink(WebDriver driver) {
+		waitForElementClickable(driver, BasePageUI.MY_PRODUCT_REVIEWS_LINK);
+		clickToElement(driver, BasePageUI.MY_PRODUCT_REVIEWS_LINK);
+		return GeneratorManagerPage.getMyProductReviewsPage(driver);
+	}
+	
+	public RewardPointsPageObject clickToRewardPointsLink(WebDriver driver) {
+		waitForElementClickable(driver, BasePageUI.REWARD_POINTS_LINK);
+		clickToElement(driver, BasePageUI.REWARD_POINTS_LINK);
+		return GeneratorManagerPage.getRewardPointsPage(driver);
 	}
 	
 }

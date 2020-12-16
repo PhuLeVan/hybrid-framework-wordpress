@@ -33,7 +33,7 @@ public class HomePageObject extends BasePage {
 		waitForElementVisible(driver, HomePageUI.LOGOUT_LINK);
 		return isElementDisplay(driver, HomePageUI.LOGOUT_LINK);
 	}
-
+	
 	public CustomerInfoPageObject clickToMyAccountLink() {
 		waitForElementClickable(driver, HomePageUI.MY_ACCOUNT_LINK);
 		clickToElement(driver, HomePageUI.MY_ACCOUNT_LINK);
