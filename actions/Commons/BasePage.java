@@ -115,6 +115,11 @@ public class BasePage {
 		return By.xpath(locator);
 	}
 	
+	public String getDynamicLocator(String locator, String... values) {
+		locator = String.format(locator, (Object[]) values);
+		return locator;
+	}
+	
 	public WebElement getWebElement(WebDriver driver, String locator) {
 		return driver.findElement(getByXpath(locator));
 	}
@@ -130,6 +135,13 @@ public class BasePage {
 		getWebElement(driver, locator).click();
 	}
 	
+	public void clickToElement(WebDriver driver, String locator, String... values) {
+		if(driver.toString().toLowerCase().contains("edge")) {
+			sleepInMiliSecond(500);
+		}
+		getWebElement(driver, getDynamicLocator(locator, values)).click();
+	}
+	
 	public void clickToElement (WebElement element) {
 		element.click();
 	}
@@ -139,6 +151,15 @@ public class BasePage {
 			sleepInMiliSecond(500);
 		}
 		WebElement element = getWebElement(driver, locator);
+		element.clear();
+		element.sendKeys(value);
+	}
+	
+	public void sendkeyToElement(WebDriver driver, String locator, String value, String... values) {
+		if(driver.toString().toLowerCase().contains("chrome") || driver.toString().toLowerCase().contains("edge")) {
+			sleepInMiliSecond(500);
+		}
+		WebElement element = getWebElement(driver, getDynamicLocator(locator, values));
 		element.clear();
 		element.sendKeys(value);
 	}
@@ -224,6 +245,10 @@ public class BasePage {
 	
 	public boolean isElementDisplay(WebDriver driver, String locator) {
 		return getWebElement(driver, locator).isDisplayed();
+	}
+	
+	public boolean isElementDisplay(WebDriver driver, String locator, String... values) {
+		return getWebElement(driver, getDynamicLocator(locator, values)).isDisplayed();
 	}
 	
 	public boolean isElementEnabled(WebDriver driver, String locator) {
@@ -361,6 +386,11 @@ public class BasePage {
 		WebDriverWait explicitWait = new WebDriverWait(driver, longTimeout);
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(getByXpath(locator)));
 	}
+	
+	public void waitForElementVisible(WebDriver driver, String locator, String... values) {
+		WebDriverWait explicitWait = new WebDriverWait(driver, longTimeout);
+		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(getByXpath(getDynamicLocator(locator, values))));
+	}
 
 	public void waitForListElementVisible(WebDriver driver, String locator) {
 		WebDriverWait explicitWait = new WebDriverWait(driver, longTimeout);
@@ -372,39 +402,76 @@ public class BasePage {
 		explicitWait.until(ExpectedConditions.invisibilityOfElementLocated(getByXpath(locator)));
 	}
 	
+	public void waitForElementInvisible(WebDriver driver, String locator, String... values) {
+		WebDriverWait explicitWait = new WebDriverWait(driver, longTimeout);
+		explicitWait.until(ExpectedConditions.invisibilityOfElementLocated(getByXpath(getDynamicLocator(locator, values))));
+	}
+	
 	public void waitForElementClickable(WebDriver driver, String locator) {
 		WebDriverWait explicitWait = new WebDriverWait(driver, longTimeout);
 		explicitWait.until(ExpectedConditions.elementToBeClickable(getByXpath(locator)));
 	}
 	
+	public void waitForElementClickable(WebDriver driver, String locator, String values) {
+		WebDriverWait explicitWait = new WebDriverWait(driver, longTimeout);
+		explicitWait.until(ExpectedConditions.elementToBeClickable(getByXpath(getDynamicLocator(locator, values))));
+	}
+	
+	// TC Level_06
 	public CustomerInfoPageObject clickToCustomerInfoLink(WebDriver driver) {
 		waitForElementClickable(driver, BasePageUI.CUSTOMER_INFO_LINK);
 		clickToElement(driver, BasePageUI.CUSTOMER_INFO_LINK);
 		return GeneratorManagerPage.getCustomerInfoPage(driver);
 	}
 	
+	// TC Level_06
 	public AddressesPageObject clickToAddressesLink(WebDriver driver) {
 		waitForElementClickable(driver, BasePageUI.ADDRESSES_LINK);
 		clickToElement(driver, BasePageUI.ADDRESSES_LINK);
 		return GeneratorManagerPage.getAddressesPage(driver);
 	}
 	
+	// TC Level_06
 	public OrdersPageObject clickToOrdersLink(WebDriver driver) {
 		waitForElementClickable(driver, BasePageUI.ORDERS_LINK);
-		clickToElement(driver, BasePageUI.ORDERS_LINK);
+		clickToElement(driver, BasePageUI.ORDERS_LINK);	
 		return GeneratorManagerPage.getOrdersPage(driver);
 	}
 	
+	// TC Level_06
 	public MyProductReviewsPageObject clickToMyProductReviewsLink(WebDriver driver) {
 		waitForElementClickable(driver, BasePageUI.MY_PRODUCT_REVIEWS_LINK);
 		clickToElement(driver, BasePageUI.MY_PRODUCT_REVIEWS_LINK);
 		return GeneratorManagerPage.getMyProductReviewsPage(driver);
 	}
 	
+	// TC Level_06
 	public RewardPointsPageObject clickToRewardPointsLink(WebDriver driver) {
 		waitForElementClickable(driver, BasePageUI.REWARD_POINTS_LINK);
 		clickToElement(driver, BasePageUI.REWARD_POINTS_LINK);
 		return GeneratorManagerPage.getRewardPointsPage(driver);
+	}
+	
+	public BasePage openLinkByPageName(WebDriver driver, String pageName) {
+		waitForElementClickable(driver, BasePageUI.DYNAMIC_LINK, pageName);
+		clickToElement(driver, BasePageUI.DYNAMIC_LINK, pageName);
+		switch (pageName) {
+		case "Addresses":
+			return GeneratorManagerPage.getAddressesPage(driver);
+		case "Customer info":
+			return GeneratorManagerPage.getCustomerInfoPage(driver);
+		case "Orders":
+			return GeneratorManagerPage.getOrdersPage(driver);
+		case "My product reviews":
+			return GeneratorManagerPage.getMyProductReviewsPage(driver);
+		default:
+			return GeneratorManagerPage.getRewardPointsPage(driver);
+		}
+	}
+	
+	public void openLinkWithPageName(WebDriver driver, String pageName) {
+		waitForElementClickable(driver, BasePageUI.DYNAMIC_LINK, pageName);
+		clickToElement(driver, BasePageUI.DYNAMIC_LINK, pageName);
 	}
 	
 }

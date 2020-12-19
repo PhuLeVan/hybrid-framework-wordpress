@@ -12,7 +12,7 @@
 		<parameter name="browser" value="chrome_ui" />
 		<classes>
 			<class
-				name="com.nopcommerce.users.Level_06_Register_Login_Switch_Page_Type" />
+				name="com.nopcommerce.users.Level_07_Register_Login_Rest_Parameter" />
 		</classes>
 	</test>
 
