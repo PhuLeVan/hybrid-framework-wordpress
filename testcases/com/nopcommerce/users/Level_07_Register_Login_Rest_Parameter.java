@@ -10,26 +10,26 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import Commons.BaseTest;
-import pageObjects.AddressesPageObject;
-import pageObjects.CustomerInfoPageObject;
+import pageObjects.UserAddressesPO;
+import pageObjects.UserCustomerInfoPO;
 import pageObjects.GeneratorManagerPage;
-import pageObjects.HomePageObject;
-import pageObjects.LoginPageObject;
-import pageObjects.MyProductReviewsPageObject;
-import pageObjects.OrdersPageObject;
-import pageObjects.RegisterPageObject;
-import pageObjects.RewardPointsPageObject;
+import pageObjects.UserHomePO;
+import pageObjects.UserLoginPO;
+import pageObjects.UserMyProductReviewsPO;
+import pageObjects.UserOrdersPO;
+import pageObjects.UserRegisterPO;
+import pageObjects.UserRewardPointsPO;
 
 public class Level_07_Register_Login_Rest_Parameter extends BaseTest {
 	WebDriver driver;
-	HomePageObject homePage;
-	RegisterPageObject registerPage;
-	LoginPageObject loginPage;
-	CustomerInfoPageObject customerInfoPage;
-	AddressesPageObject addressesPage;
-	OrdersPageObject ordersPage;
-	RewardPointsPageObject rewardPointsPage;
-	MyProductReviewsPageObject myProductReviewsPage;
+	UserHomePO homePage;
+	UserRegisterPO registerPage;
+	UserLoginPO loginPage;
+	UserCustomerInfoPO customerInfoPage;
+	UserAddressesPO addressesPage;
+	UserOrdersPO ordersPage;
+	UserRewardPointsPO rewardPointsPage;
+	UserMyProductReviewsPO myProductReviewsPage;
 	
 	
 	String firstName = "Robert";
@@ -52,7 +52,7 @@ public class Level_07_Register_Login_Rest_Parameter extends BaseTest {
 	
 	@Test
 	public void TC_01_Register() {
-		homePage = GeneratorManagerPage.getHomepage(driver);
+		homePage = GeneratorManagerPage.getUserHomepage(driver);
 		
 		registerPage = homePage.clickToRegisterLink();
 		
@@ -129,31 +129,31 @@ public class Level_07_Register_Login_Rest_Parameter extends BaseTest {
 	@Test
 	public void TC_04_Rest_parameter_Solution_1() {
 		// Customer Info -> Reward Points
-		rewardPointsPage = (RewardPointsPageObject) customerInfoPage.openLinkByPageName(driver, "Reward points");
+		rewardPointsPage = (UserRewardPointsPO) customerInfoPage.openLinkByPageName(driver, "Reward points");
 		
 		// Reward Points -> Addresses
-		addressesPage = (AddressesPageObject) rewardPointsPage.openLinkByPageName(driver, "Addresses");
+		addressesPage = (UserAddressesPO) rewardPointsPage.openLinkByPageName(driver, "Addresses");
 		
 		// Addresses -> Orders
-		ordersPage = (OrdersPageObject) addressesPage.openLinkByPageName(driver, "Orders");
+		ordersPage = (UserOrdersPO) addressesPage.openLinkByPageName(driver, "Orders");
 		
 		// Orders -> My Product Reviews
-		myProductReviewsPage = (MyProductReviewsPageObject) ordersPage.openLinkByPageName(driver, "My product reviews");
+		myProductReviewsPage = (UserMyProductReviewsPO) ordersPage.openLinkByPageName(driver, "My product reviews");
 	}
 	
 	@Test
 	public void TC_04_Rest_parameter_Solution_2() {
 		myProductReviewsPage.openLinkWithPageName(driver, "Addresses");
-		addressesPage = GeneratorManagerPage.getAddressesPage(driver);
+		addressesPage = GeneratorManagerPage.getUserAddressesPage(driver);
 		
 		addressesPage.openLinkWithPageName(driver, "Orders");
-		ordersPage = GeneratorManagerPage.getOrdersPage(driver);
+		ordersPage = GeneratorManagerPage.getUserOrdersPage(driver);
 		
 		ordersPage.openLinkWithPageName(driver, "My product reviews");
-		myProductReviewsPage = GeneratorManagerPage.getMyProductReviewsPage(driver);
+		myProductReviewsPage = GeneratorManagerPage.getUserMyProductReviewsPage(driver);
 		
 		myProductReviewsPage.openLinkWithPageName(driver, "Customer info");
-		customerInfoPage = GeneratorManagerPage.getCustomerInfoPage(driver);
+		customerInfoPage = GeneratorManagerPage.getUserCustomerInfoPage(driver);
 	}
 	
 	public int getRandomNumber() {

@@ -9,4 +9,5 @@ public class BasePageUI {
 	
 	// Dynamic link
 	public static final String DYNAMIC_LINK = "//div[@class='listbox']//a[text()='%s']";
+	public static final String AJAX_LOADING_ICON = "//div[@id='ajaxBusy']/span";
 }

@@ -10,26 +10,26 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import Commons.BaseTest;
-import pageObjects.AddressesPageObject;
-import pageObjects.CustomerInfoPageObject;
+import pageObjects.UserAddressesPO;
+import pageObjects.UserCustomerInfoPO;
 import pageObjects.GeneratorManagerPage;
-import pageObjects.HomePageObject;
-import pageObjects.LoginPageObject;
-import pageObjects.MyProductReviewsPageObject;
-import pageObjects.OrdersPageObject;
-import pageObjects.RegisterPageObject;
-import pageObjects.RewardPointsPageObject;
+import pageObjects.UserHomePO;
+import pageObjects.UserLoginPO;
+import pageObjects.UserMyProductReviewsPO;
+import pageObjects.UserOrdersPO;
+import pageObjects.UserRegisterPO;
+import pageObjects.UserRewardPointsPO;
 
 public class Level_06_Register_Login_Switch_Page_Type extends BaseTest {
 	WebDriver driver;
-	HomePageObject homePage;
-	RegisterPageObject registerPage;
-	LoginPageObject loginPage;
-	CustomerInfoPageObject customerInfoPage;
-	AddressesPageObject addressesPage;
-	OrdersPageObject ordersPage;
-	RewardPointsPageObject rewardPointsPage;
-	MyProductReviewsPageObject myProductReviewsPage;
+	UserHomePO homePage;
+	UserRegisterPO registerPage;
+	UserLoginPO loginPage;
+	UserCustomerInfoPO customerInfoPage;
+	UserAddressesPO addressesPage;
+	UserOrdersPO ordersPage;
+	UserRewardPointsPO rewardPointsPage;
+	UserMyProductReviewsPO myProductReviewsPage;
 	
 	
 	String firstName = "Robert";
@@ -52,7 +52,7 @@ public class Level_06_Register_Login_Switch_Page_Type extends BaseTest {
 	
 	@Test
 	public void TC_01_Register() {
-		homePage = GeneratorManagerPage.getHomepage(driver);
+		homePage = GeneratorManagerPage.getUserHomepage(driver);
 		
 		registerPage = homePage.clickToRegisterLink();
 		

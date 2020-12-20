@@ -13,19 +13,19 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import pageObjects.CustomerInfoPageObject;
-import pageObjects.HomePageObject;
-import pageObjects.LoginPageObject;
-import pageObjects.RegisterPageObject;
+import pageObjects.UserCustomerInfoPO;
+import pageObjects.UserHomePO;
+import pageObjects.UserLoginPO;
+import pageObjects.UserRegisterPO;
 
 
 public class Level_03_Register_Login_Page_Object {
 	WebDriver driver;
 	String projectFolder = System.getProperty("user.dir");
-	HomePageObject homePage;
-	RegisterPageObject registerPage;
-	LoginPageObject loginPage;
-	CustomerInfoPageObject customerInfoPage;
+	UserHomePO homePage;
+	UserRegisterPO registerPage;
+	UserLoginPO loginPage;
+	UserCustomerInfoPO customerInfoPage;
 	String firstName = "Robert";
 	String lastName = "Teo";
 	String day = "10";
@@ -49,7 +49,7 @@ public class Level_03_Register_Login_Page_Object {
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		driver.get("https://demo.nopcommerce.com/");
-		homePage = new HomePageObject(driver);
+		homePage = new UserHomePO(driver);
 	}
 	
 	@Test
@@ -58,7 +58,7 @@ public class Level_03_Register_Login_Page_Object {
 		
 		homePage.sleepInSecond(1);
 		
-		registerPage = new RegisterPageObject(driver);
+		registerPage = new UserRegisterPO(driver);
 		
 		registerPage.clickToGenderMaleRadioButton();
 		
@@ -92,11 +92,11 @@ public class Level_03_Register_Login_Page_Object {
 	
 	@Test
 	public void TC_02_Login() {
-		homePage = new HomePageObject(driver);
+		homePage = new UserHomePO(driver);
 		
 		homePage.clickToLoginLink(); 
 		
-		loginPage = new LoginPageObject(driver);
+		loginPage = new UserLoginPO(driver);
 		
 		loginPage.inputToEmailTextbox(email); 
 		
@@ -104,7 +104,7 @@ public class Level_03_Register_Login_Page_Object {
 		
 		loginPage.clickToLoginButton(); 
 		
-		homePage = new HomePageObject(driver);
+		homePage = new UserHomePO(driver);
 		
 		Assert.assertTrue(homePage.isMyAccountLinkDisplayed()); 
 		
@@ -117,7 +117,7 @@ public class Level_03_Register_Login_Page_Object {
 	@Test
 	public void TC_03_View_My_account() {
 		
-		customerInfoPage = new CustomerInfoPageObject(driver);
+		customerInfoPage = new UserCustomerInfoPO(driver);
 		
 		Assert.assertTrue(customerInfoPage.isGenderMaleRadioButtonSelected());
 		

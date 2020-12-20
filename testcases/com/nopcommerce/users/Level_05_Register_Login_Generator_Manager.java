@@ -10,18 +10,18 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import Commons.BaseTest;
-import pageObjects.CustomerInfoPageObject;
+import pageObjects.UserCustomerInfoPO;
 import pageObjects.GeneratorManagerPage;
-import pageObjects.HomePageObject;
-import pageObjects.LoginPageObject;
-import pageObjects.RegisterPageObject;
+import pageObjects.UserHomePO;
+import pageObjects.UserLoginPO;
+import pageObjects.UserRegisterPO;
 
 public class Level_05_Register_Login_Generator_Manager extends BaseTest {
 	WebDriver driver;
-	HomePageObject homePage;
-	RegisterPageObject registerPage;
-	LoginPageObject loginPage;
-	CustomerInfoPageObject customerInfoPage;
+	UserHomePO homePage;
+	UserRegisterPO registerPage;
+	UserLoginPO loginPage;
+	UserCustomerInfoPO customerInfoPage;
 	String firstName = "Robert";
 	String lastName = "Teo";
 	String day = "10";
@@ -42,7 +42,7 @@ public class Level_05_Register_Login_Generator_Manager extends BaseTest {
 	
 	@Test
 	public void TC_01_Register() {
-		homePage = GeneratorManagerPage.getHomepage(driver);
+		homePage = GeneratorManagerPage.getUserHomepage(driver);
 		
 		registerPage = homePage.clickToRegisterLink();
 		

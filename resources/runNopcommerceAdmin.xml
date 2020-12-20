@@ -10,9 +10,10 @@
 
 	<test name="Run on CHROME UI">
 		<parameter name="browser" value="chrome_ui" />
+		<parameter name="url" value="https://admin-demo.nopcommerce.com/"/>
 		<classes>
 			<class
-				name="com.nopcommerce.users.Level_07_Register_Login_Rest_Parameter" />
+				name="com.nopcommerce.admin.Level_08_Web_Data_Table" />
 		</classes>
 	</test>
 
