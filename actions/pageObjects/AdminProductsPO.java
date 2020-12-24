@@ -2,6 +2,7 @@ package pageObjects;
 
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -53,6 +54,26 @@ public class AdminProductsPO extends BasePage{
 	public void checkToProductCheckboxByName(String productName) {
 		waitForElementClickable(driver, AdminProductsPageUI.PRODUCT_CHECKBOX_BY_NAME, productName);
 		checkToCheckbox(driver, AdminProductsPageUI.PRODUCT_CHECKBOX_BY_NAME, productName);
+	}
+
+	public boolean isInfomationDisplayAtColumnNameAndRowName(String columnName, String rowNumber, String expectedValue) {
+		int getColumnIndex = countElementSize(driver, AdminProductsPageUI.COLUMN_NAME_SIBLING, columnName) + 1;
+		String actualValues = getElementText(driver, AdminProductsPageUI.CELL_VALUE_BY_COLUMN_AND_ROW_INDEX, rowNumber, String.valueOf(getColumnIndex));
+		return actualValues.equals(expectedValue);
+	}
+
+	public boolean isPublishStatusAtColumnNameAndRowName(String columnName, String rowNumber, String publishedStatus) {
+		int getColumnIndex = countElementSize(driver, AdminProductsPageUI.COLUMN_NAME_SIBLING, columnName) + 1;
+		return isElementDisplay(driver, AdminProductsPageUI.PUBLISHED_STATUS_BY_COLUMN_AND_ROW_INDEX, rowNumber, String.valueOf(getColumnIndex), publishedStatus);
+	}
+
+	public void clickToEditIconAtTable(String productName) {
+		waitForElementClickable(driver, AdminProductsPageUI.EDIT_ICON_COLUMN_AND_ROW_INDEX, productName);
+		clickToElement(driver, AdminProductsPageUI.EDIT_ICON_COLUMN_AND_ROW_INDEX, productName);
+	}
+
+	public String isProductNameDisplayed() {
+		return getElementAttribute(driver, AdminProductsPageUI.PRODUCT_NAME_VALUE, "value");
 	}
 	
 }

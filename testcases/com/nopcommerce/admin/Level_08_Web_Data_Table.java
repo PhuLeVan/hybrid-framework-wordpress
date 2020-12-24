@@ -67,7 +67,14 @@ public class Level_08_Web_Data_Table extends BaseTest {
 	@Test
 	public void TC_03_Displayed() {
 		
+		Assert.assertTrue(productPage.isInfomationDisplayAtColumnNameAndRowName("Product name", "2", "$25 Virtual Gift Card"));
+		Assert.assertTrue(productPage.isInfomationDisplayAtColumnNameAndRowName("SKU", "3", "PG_CR_050"));
+		Assert.assertTrue(productPage.isInfomationDisplayAtColumnNameAndRowName("Price", "6", "1300"));
+		Assert.assertTrue(productPage.isPublishStatusAtColumnNameAndRowName("Published", "6", "true"));
 		
+		productPage.clickToEditIconAtTable("Apple iCam");
+		
+		productPage.isProductNameDisplayed();
 	}
 	
 	@Test

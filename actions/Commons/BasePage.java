@@ -165,6 +165,10 @@ public class BasePage {
 		element.sendKeys(value);
 	}
 	
+	public int countElementSize(WebDriver driver, String locator, String... values) {
+		return getListElement(driver, getDynamicLocator(locator, values)).size();
+	}
+	
 	public void selectItemInDropdown(WebDriver driver, String locator, String valueItem) {
 		Select select = new Select(getElement(driver, locator));
 		select.selectByVisibleText(valueItem);
@@ -220,6 +224,10 @@ public class BasePage {
 	
 	public String getElementText(WebDriver driver, String locator) {
 		return getElement(driver, locator).getText().trim();
+	}
+	
+	public String getElementText(WebDriver driver, String locator, String... values) {
+		return getElement(driver, getDynamicLocator(locator, values)).getText().trim();
 	}
 	
 	public String getElementAttribute(WebDriver driver, String locator, String attributeName) {
