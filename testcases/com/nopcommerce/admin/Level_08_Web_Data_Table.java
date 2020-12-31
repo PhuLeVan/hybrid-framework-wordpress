@@ -19,9 +19,9 @@ public class Level_08_Web_Data_Table extends BaseTest {
 	
 	@Parameters({"browser", "url"})
 	@BeforeClass
-	public void beforeClass(@Optional String browserName, @Optional String url) {
+	public void beforeClass(String browserName, String url) {
 		
-		driver = getBrowserDriver( browserName , url );
+		driver = getBrowserDriver(browserName, url);
 		
 		loginPage = GeneratorManagerPage.getAdminLoginPage(driver);
 		
