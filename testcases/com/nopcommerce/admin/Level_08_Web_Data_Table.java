@@ -19,7 +19,7 @@ public class Level_08_Web_Data_Table extends BaseTest {
 	
 	@Parameters({"browser", "url"})
 	@BeforeClass
-	public void beforeClass( String browserName, String url) {
+	public void beforeClass(String browserName,String url) {
 		
 		driver = getBrowserDriver(browserName, url);
 		
