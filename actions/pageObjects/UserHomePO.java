@@ -34,6 +34,16 @@ public class UserHomePO extends BasePage {
 		return isElementDisplay(driver, UserHomePageUI.LOGOUT_LINK);
 	}
 	
+	public boolean isRegisterLinkUnDisplayed() {
+		waitForElementInvisible(driver, UserHomePageUI.REGISTER_LINK);
+		return isElementUnDisplay(driver, UserHomePageUI.REGISTER_LINK);
+	}
+	
+	public boolean isLoginLinkUnDisplayed() {
+		waitForElementInvisible(driver, UserHomePageUI.LOGIN_LINK);
+		return isElementUnDisplay(driver, UserHomePageUI.LOGIN_LINK);
+	}
+	
 	public UserCustomerInfoPO clickToMyAccountLink() {
 		waitForElementClickable(driver, UserHomePageUI.MY_ACCOUNT_LINK);
 		clickToElement(driver, UserHomePageUI.MY_ACCOUNT_LINK);

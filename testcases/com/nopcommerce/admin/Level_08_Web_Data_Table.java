@@ -73,8 +73,9 @@ public class Level_08_Web_Data_Table extends BaseTest {
 		Assert.assertTrue(productPage.isPublishStatusAtColumnNameAndRowName("Published", "6", "true"));
 		
 		productPage.clickToEditIconAtTable("Apple iCam");
-		
 		productPage.isProductNameDisplayed();
+		productPage.backToProductList();
+		productPage.clickToEditIconAtTable("First Prize Pies");
 	}
 	
 	@Test

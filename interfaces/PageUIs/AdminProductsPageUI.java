@@ -12,5 +12,6 @@ public class AdminProductsPageUI {
 	public static final String PUBLISHED_STATUS_BY_COLUMN_AND_ROW_INDEX = "//tr[%s]/td[%s]/i[contains(@class,'%s')]"; 
 	public static final String EDIT_ICON_COLUMN_AND_ROW_INDEX = "//td[text()='%s']/following-sibling::td/a"; 
 	public static final String PRODUCT_NAME_VALUE = "//input[@id='Name']"; 
+	public static final String BACK_TO_PRODUCT_LIST = "//a[text()='back to product list']"; 
 	
 }

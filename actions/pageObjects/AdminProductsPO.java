@@ -2,7 +2,6 @@ package pageObjects;
 
 import java.util.List;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -70,10 +69,16 @@ public class AdminProductsPO extends BasePage{
 	public void clickToEditIconAtTable(String productName) {
 		waitForElementClickable(driver, AdminProductsPageUI.EDIT_ICON_COLUMN_AND_ROW_INDEX, productName);
 		clickToElement(driver, AdminProductsPageUI.EDIT_ICON_COLUMN_AND_ROW_INDEX, productName);
+		waitForAjaxLoadingIconInvisible(driver);
 	}
 
 	public String isProductNameDisplayed() {
 		return getElementAttribute(driver, AdminProductsPageUI.PRODUCT_NAME_VALUE, "value");
 	}
 	
+	public void backToProductList() {
+		waitForElementClickable(driver, AdminProductsPageUI.BACK_TO_PRODUCT_LIST);
+		clickToElement(driver, AdminProductsPageUI.BACK_TO_PRODUCT_LIST);
+		waitForAjaxLoadingIconInvisible(driver);
+	}
 }

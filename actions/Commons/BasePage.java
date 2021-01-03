@@ -2,6 +2,7 @@ package Commons;
 
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -14,21 +15,22 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import PageUIs.AdminProductsPageUI;
 import PageUIs.BasePageUI;
-import PageUIs.UserHomePageUI;
+import pageObjects.GeneratorManagerPage;
 import pageObjects.UserAddressesPO;
 import pageObjects.UserCustomerInfoPO;
-import pageObjects.GeneratorManagerPage;
 import pageObjects.UserMyProductReviewsPO;
 import pageObjects.UserOrdersPO;
 import pageObjects.UserRewardPointsPO;
 
 public class BasePage {
+	List<WebElement> elements;
+	
 	public static BasePage getBasePage() {
 		return new BasePage();
 	}
 	
+	private long shortTimeout = 5;
 	private long longTimeout = 15;
 	
 	public void openPageUrl (WebDriver driver, String pageUrl) {
@@ -267,6 +269,25 @@ public class BasePage {
 		return getElement(driver, getDynamicLocator(locator, values)).isDisplayed();
 	}
 	
+	public boolean isElementUnDisplay(WebDriver driver, String locator) {
+		overideImplicitWait(driver, shortTimeout);
+		elements = getListElement(driver, locator);
+		overideImplicitWait(driver, longTimeout);
+		
+		if(elements.size() == 0) {
+			System.out.println("Elements không hiển thị trên UI và không có trong DOM");
+			return true;
+		}
+		else if (elements.size() > 0 && !elements.get(0).isDisplayed()) {
+			System.out.println("Elements không hiển thị trên UI và có trong DOM");
+			return true;
+		}
+		else {
+			System.out.println("Elements không hiển thị trên UI và không có trong DOM");
+			return false;
+		}
+	}
+	
 	public boolean isElementEnabled(WebDriver driver, String locator) {
 		return getElement(driver, locator).isEnabled();
 	}
@@ -414,8 +435,14 @@ public class BasePage {
 	}
 	
 	public void waitForElementInvisible(WebDriver driver, String locator) {
-		WebDriverWait explicitWait = new WebDriverWait(driver, longTimeout);
+		WebDriverWait explicitWait = new WebDriverWait(driver, shortTimeout);
+		overideImplicitWait(driver, shortTimeout);
 		explicitWait.until(ExpectedConditions.invisibilityOfElementLocated(getByXpath(locator)));
+		overideImplicitWait(driver, longTimeout);
+	}
+	
+	public void overideImplicitWait(WebDriver driver, long timeout) {
+		driver.manage().timeouts().implicitlyWait(timeout, TimeUnit.SECONDS);
 	}
 	
 	public void waitForElementInvisible(WebDriver driver, String locator, String... values) {
