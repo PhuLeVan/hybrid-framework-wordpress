@@ -11,6 +11,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.testng.annotations.Optional;
 
 public class BaseTest {
 	private String projectFolder = System.getProperty("user.dir");
@@ -63,11 +64,11 @@ public class BaseTest {
 			driver = new FirefoxDriver();
 		} else if(browser == Browser.CHROME_UI) {
 			WebDriverManager.chromedriver().setup();
-			ChromeOptions options = new ChromeOptions();    
+			ChromeOptions options = new ChromeOptions();
 			options.setExperimentalOption("useAutomationExtension", false);
-			options.setExperimentalOption("excludeSwitches", 
+			options.setExperimentalOption("excludeSwitches",
 			        Collections.singletonList("enable-automation"));
-			driver = new ChromeDriver(options); 
+			driver = new ChromeDriver(options);
 		} else if (browser == Browser.FIREFOX_HEADLESS) {
 			WebDriverManager.firefoxdriver();
 			FirefoxOptions firefoxOptions = new FirefoxOptions();
@@ -83,7 +84,7 @@ public class BaseTest {
 		} else if (browser == Browser.EDGE_CHROMIUM) {
 			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
-		} 
+		}
 		else if (browser == Browser.SAFARI) {
 			driver = new EdgeDriver();
 		} else {
@@ -92,7 +93,8 @@ public class BaseTest {
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		driver.get(url);
-		
+
 		return driver;
 	}
+
 }
