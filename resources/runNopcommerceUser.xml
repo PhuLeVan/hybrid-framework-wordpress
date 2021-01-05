@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="WordPress - Admin" parallel="false">
+	
+	<listeners>
+		<listeners class-name="commons.MethodListener"/>
+		<listeners class-name="org.uncommons.reportng.HTMLReporter"/>
+		<listeners class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+	</listeners>
+	
+	<test name="Run on CHROME UI">
+		<parameter name="browser" value="chrome_ui" />
+		<parameter name="url" value="https://demo.nopcommerce.com/"/>
+		<classes>
+			<class
+				name="com.nopcommerce.users.Level_10_Register_Login_Verify_Log_Report_HTML" />
+		</classes>
+	</test>
+
+
+
+</suite> 

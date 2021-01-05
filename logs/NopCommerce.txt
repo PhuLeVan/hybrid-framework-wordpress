@@ -1,0 +1,24 @@
+2021-01-05 23:17:07,195 INFO  com.nopcommerce.users.Level_10_Register_Login_Verify_Log_Report_HTML - Register - TC01: Open home page
+2021-01-05 23:17:07,201 INFO  com.nopcommerce.users.Level_10_Register_Login_Verify_Log_Report_HTML - Register - TC02: Click Register link
+2021-01-05 23:17:09,188 INFO  com.nopcommerce.users.Level_10_Register_Login_Verify_Log_Report_HTML - Register - TC03: Click Gender Male radio button
+2021-01-05 23:17:09,343 INFO  com.nopcommerce.users.Level_10_Register_Login_Verify_Log_Report_HTML - Register - TC04: Input Firstname
+2021-01-05 23:17:10,072 INFO  com.nopcommerce.users.Level_10_Register_Login_Verify_Log_Report_HTML - Register - TC05: Input Lastname 
+2021-01-05 23:17:10,766 INFO  com.nopcommerce.users.Level_10_Register_Login_Verify_Log_Report_HTML - Register - TC06: Select day
+2021-01-05 23:17:10,942 INFO  com.nopcommerce.users.Level_10_Register_Login_Verify_Log_Report_HTML - Register - TC07: Select month
+2021-01-05 23:17:11,121 INFO  com.nopcommerce.users.Level_10_Register_Login_Verify_Log_Report_HTML - Register - TC08: Select year 
+2021-01-05 23:17:11,289 INFO  com.nopcommerce.users.Level_10_Register_Login_Verify_Log_Report_HTML - Register - TC09: Input email
+2021-01-05 23:17:12,041 INFO  com.nopcommerce.users.Level_10_Register_Login_Verify_Log_Report_HTML - Register - TC10: Input company name
+2021-01-05 23:17:12,779 INFO  com.nopcommerce.users.Level_10_Register_Login_Verify_Log_Report_HTML - Register - TC11: Input password
+2021-01-05 23:17:13,508 INFO  com.nopcommerce.users.Level_10_Register_Login_Verify_Log_Report_HTML - Register - TC12: Input confirm password
+2021-01-05 23:17:14,211 INFO  com.nopcommerce.users.Level_10_Register_Login_Verify_Log_Report_HTML - Register - TC13: Click Register button
+2021-01-05 23:17:16,163 INFO  com.nopcommerce.users.Level_10_Register_Login_Verify_Log_Report_HTML - Register - TC14: Verify
+2021-01-05 23:17:16,300 INFO  com.nopcommerce.users.Level_10_Register_Login_Verify_Log_Report_HTML - Register - TC15: Click log out link
+2021-01-05 23:17:19,112 INFO  com.nopcommerce.users.Level_10_Register_Login_Verify_Log_Report_HTML - Register - TC01: Open Login page
+2021-01-05 23:17:19,799 INFO  com.nopcommerce.users.Level_10_Register_Login_Verify_Log_Report_HTML - Register - TC02: Input email
+2021-01-05 23:17:20,552 INFO  com.nopcommerce.users.Level_10_Register_Login_Verify_Log_Report_HTML - Register - TC03: Input password
+2021-01-05 23:17:21,257 INFO  com.nopcommerce.users.Level_10_Register_Login_Verify_Log_Report_HTML - Register - TC04: Click Login button
+2021-01-05 23:17:23,289 INFO  com.nopcommerce.users.Level_10_Register_Login_Verify_Log_Report_HTML - Register - TC05: Verify my account link
+2021-01-05 23:17:23,379 INFO  com.nopcommerce.users.Level_10_Register_Login_Verify_Log_Report_HTML - Register - TC06: Verify logout link
+2021-01-05 23:17:23,446 INFO  com.nopcommerce.users.Level_10_Register_Login_Verify_Log_Report_HTML - Register - TC07: verify Register link is undisplayed 
+2021-01-05 23:17:33,643 INFO  com.nopcommerce.users.Level_10_Register_Login_Verify_Log_Report_HTML - Register - TC08: verify Login link is undisplayed
+2021-01-05 23:17:43,730 INFO  com.nopcommerce.users.Level_10_Register_Login_Verify_Log_Report_HTML - Register - TC09: Click my account link
