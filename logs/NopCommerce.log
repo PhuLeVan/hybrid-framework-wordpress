@@ -94,3 +94,34 @@
 2021-01-05 23:17:23,446 INFO  com.nopcommerce.users.Level_10_Register_Login_Verify_Log_Report_HTML - Register - TC07: verify Register link is undisplayed 
 2021-01-05 23:17:33,643 INFO  com.nopcommerce.users.Level_10_Register_Login_Verify_Log_Report_HTML - Register - TC08: verify Login link is undisplayed
 2021-01-05 23:17:43,730 INFO  com.nopcommerce.users.Level_10_Register_Login_Verify_Log_Report_HTML - Register - TC09: Click my account link
+2021-01-06 22:17:01,189 INFO  com.nopcommerce.users.Level_10_Register_Login_Verify_Log_Report_HTML - Register - TC01: Open home page
+2021-01-06 22:17:01,203 INFO  com.nopcommerce.users.Level_10_Register_Login_Verify_Log_Report_HTML - Register - TC02: Click Register link
+2021-01-06 22:17:04,697 INFO  com.nopcommerce.users.Level_10_Register_Login_Verify_Log_Report_HTML - Register - TC03: Click Gender Male radio button
+2021-01-06 22:17:04,842 INFO  com.nopcommerce.users.Level_10_Register_Login_Verify_Log_Report_HTML - Register - TC04: Input Firstname
+2021-01-06 22:17:05,556 INFO  com.nopcommerce.users.Level_10_Register_Login_Verify_Log_Report_HTML - Register - TC05: Input Lastname 
+2021-01-06 22:17:06,253 INFO  com.nopcommerce.users.Level_10_Register_Login_Verify_Log_Report_HTML - Register - TC06: Select day
+2021-01-06 22:17:06,429 INFO  com.nopcommerce.users.Level_10_Register_Login_Verify_Log_Report_HTML - Register - TC07: Select month
+2021-01-06 22:17:06,591 INFO  com.nopcommerce.users.Level_10_Register_Login_Verify_Log_Report_HTML - Register - TC08: Select year 
+2021-01-06 22:17:06,748 INFO  com.nopcommerce.users.Level_10_Register_Login_Verify_Log_Report_HTML - Register - TC09: Input email
+2021-01-06 22:17:07,500 INFO  com.nopcommerce.users.Level_10_Register_Login_Verify_Log_Report_HTML - Register - TC10: Input company name
+2021-01-06 22:17:08,202 INFO  com.nopcommerce.users.Level_10_Register_Login_Verify_Log_Report_HTML - Register - TC11: Input password
+2021-01-06 22:17:08,922 INFO  com.nopcommerce.users.Level_10_Register_Login_Verify_Log_Report_HTML - Register - TC12: Input confirm password
+2021-01-06 22:17:09,624 INFO  com.nopcommerce.users.Level_10_Register_Login_Verify_Log_Report_HTML - Register - TC13: Click Register button
+2021-01-06 22:17:13,243 INFO  com.nopcommerce.users.Level_10_Register_Login_Verify_Log_Report_HTML - Register - TC14: Verify
+2021-01-06 22:17:13,362 INFO  com.nopcommerce.users.Level_10_Register_Login_Verify_Log_Report_HTML - Register - TC15: Click log out link
+2021-01-06 22:17:17,769 INFO  com.nopcommerce.users.Level_10_Register_Login_Verify_Log_Report_HTML - Register - TC01: Open Login page
+2021-01-06 22:17:19,366 INFO  com.nopcommerce.users.Level_10_Register_Login_Verify_Log_Report_HTML - Register - TC02: Input email
+2021-01-06 22:17:20,131 INFO  com.nopcommerce.users.Level_10_Register_Login_Verify_Log_Report_HTML - Register - TC03: Input password
+2021-01-06 22:17:20,818 INFO  com.nopcommerce.users.Level_10_Register_Login_Verify_Log_Report_HTML - Register - TC04: Click Login button
+2021-01-06 22:17:22,110 INFO  com.nopcommerce.users.Level_10_Register_Login_Verify_Log_Report_HTML - Register - TC05: Verify my account link
+2021-01-06 22:17:22,205 INFO  com.nopcommerce.users.Level_10_Register_Login_Verify_Log_Report_HTML - Register - TC06: Verify logout link
+2021-01-06 22:17:22,282 INFO  com.nopcommerce.users.Level_10_Register_Login_Verify_Log_Report_HTML - Register - TC07: verify Register link is undisplayed 
+2021-01-06 22:17:32,387 INFO  com.nopcommerce.users.Level_10_Register_Login_Verify_Log_Report_HTML - Register - TC08: verify Login link is undisplayed
+2021-01-06 22:17:42,566 INFO  com.nopcommerce.users.Level_10_Register_Login_Verify_Log_Report_HTML - Register - TC09: Click my account link
+2021-01-12 21:42:44,652 INFO  com.nopcommerce.users.Level_11_Register_Login_Share_Class - Precondition - TC01: Open Login page
+2021-01-12 21:42:46,383 INFO  com.nopcommerce.users.Level_11_Register_Login_Share_Class - Precondition - TC02: Input email
+2021-01-12 21:42:47,126 INFO  com.nopcommerce.users.Level_11_Register_Login_Share_Class - Precondition - TC03: Input password
+2021-01-12 21:42:47,832 INFO  com.nopcommerce.users.Level_11_Register_Login_Share_Class - Precondition - TC04: Click Login button
+2021-01-12 22:19:00,612 INFO  com.nopcommerce.users.Level_12_Register_Login_Share_Cookie - Precondition - TC01: Open Login page
+2021-01-12 22:19:02,319 INFO  com.nopcommerce.users.Level_12_Register_Login_Share_Cookie - Precondition - login equal to cookie
+2021-01-12 22:19:02,405 INFO  com.nopcommerce.users.Level_12_Register_Login_Share_Cookie - Pre-condition - Refresh page

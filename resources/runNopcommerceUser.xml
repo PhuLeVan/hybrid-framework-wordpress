@@ -11,8 +11,8 @@
 		<parameter name="browser" value="chrome_ui" />
 		<parameter name="url" value="https://demo.nopcommerce.com/"/>
 		<classes>
-			<class
-				name="com.nopcommerce.users.Level_10_Register_Login_Verify_Log_Report_HTML" />
+			<class name="com.nopcommerce.common.Common_01_Cookie" />
+			<class name="com.nopcommerce.users.Level_12_Register_Login_Share_Cookie" />
 		</classes>
 	</test>
 
