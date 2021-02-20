@@ -79,8 +79,6 @@ public class Common_01_Register extends BaseTest{
 		log.info("Register - TC14: Verify");
 		Assert.assertEquals(registerPage.getRegisterSuccessMessage(), "Your registration completed"); 
 		
-
-		
 		driver.quit();
 	}
 	

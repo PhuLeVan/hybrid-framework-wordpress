@@ -125,3 +125,102 @@
 2021-01-12 22:19:00,612 INFO  com.nopcommerce.users.Level_12_Register_Login_Share_Cookie - Precondition - TC01: Open Login page
 2021-01-12 22:19:02,319 INFO  com.nopcommerce.users.Level_12_Register_Login_Share_Cookie - Precondition - login equal to cookie
 2021-01-12 22:19:02,405 INFO  com.nopcommerce.users.Level_12_Register_Login_Share_Cookie - Pre-condition - Refresh page
+2021-01-14 21:11:00,659 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC01: Open home page
+2021-01-14 21:11:00,661 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC02: Click Register link
+2021-01-14 21:11:04,192 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC03: Click Gender Male radio button
+2021-01-14 21:11:04,332 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC04: Input Firstname
+2021-01-14 21:11:05,031 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC05: Input Lastname 
+2021-01-14 21:11:05,734 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC06: Select day
+2021-01-14 21:11:20,985 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC01: Open Login page
+2021-01-14 21:11:22,726 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC02: Input email
+2021-01-14 21:11:23,477 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC03: Input password
+2021-01-14 21:11:24,163 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC04: Click Login button
+2021-01-14 21:11:26,345 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC05: Verify my account link
+2021-01-14 21:11:41,430 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - OS name = windows 7
+2021-01-14 21:11:42,304 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - ---------- QUIT BROWSER SUCCESS ----------
+2021-01-14 21:15:18,592 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - OS name = windows 7
+2021-01-14 21:15:18,593 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - 
+2021-01-14 21:16:41,748 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - OS name = windows 7
+2021-01-14 21:16:41,749 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - 
+2021-01-14 21:23:50,952 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - OS name = windows 7
+2021-01-14 21:23:50,953 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - 
+2021-01-14 21:26:21,280 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC01: Open home page
+2021-01-14 21:26:21,288 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC02: Click Register link
+2021-01-14 21:26:23,441 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC03: Click Gender Male radio button
+2021-01-14 21:26:23,595 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC04: Input Firstname
+2021-01-14 21:26:24,306 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC05: Input Lastname 
+2021-01-14 21:26:25,021 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC06: Select day
+2021-01-14 21:26:25,201 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC07: Select month
+2021-01-14 21:26:25,388 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC08: Select year 
+2021-01-14 21:26:25,549 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC09: Input email
+2021-01-14 21:26:26,323 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC10: Input company name
+2021-01-14 21:26:27,052 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC11: Input password
+2021-01-14 21:26:27,796 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC12: Input confirm password
+2021-01-14 21:26:28,518 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC13: Click Register button
+2021-01-14 21:26:31,288 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC14: Verify
+2021-01-14 21:26:31,394 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC15: Click log out link
+2021-01-14 21:26:32,596 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC01: Open Login page
+2021-01-14 21:26:33,361 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC02: Input email
+2021-01-14 21:26:34,114 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC03: Input password
+2021-01-14 21:26:34,806 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC04: Click Login button
+2021-01-14 21:26:37,858 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC05: Verify my account link
+2021-01-14 21:26:37,954 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC06: Verify logout link
+2021-01-14 21:26:38,023 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC07: verify Register link is undisplayed 
+2021-01-14 21:26:48,146 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC08: verify Login link is undisplayed
+2021-01-14 21:26:58,269 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC09: Click my account link
+2021-01-14 21:26:59,595 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - OS name = windows 7
+2021-01-14 21:27:00,298 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - ---------- QUIT BROWSER SUCCESS ----------
+2021-01-14 21:29:22,698 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - OS name = windows 7
+2021-01-14 21:29:22,699 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - 
+2021-01-14 21:29:55,840 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC01: Open home page
+2021-01-14 21:29:55,848 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC02: Click Register link
+2021-01-14 21:29:57,765 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC03: Click Gender Male radio button
+2021-01-14 21:29:57,911 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC04: Input Firstname
+2021-01-14 21:29:58,619 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC05: Input Lastname 
+2021-01-14 21:29:59,326 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC06: Select day
+2021-01-14 21:29:59,489 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC07: Select month
+2021-01-14 21:29:59,655 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC08: Select year 
+2021-01-14 21:29:59,802 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC09: Input email
+2021-01-14 21:30:00,541 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC10: Input company name
+2021-01-14 21:30:01,264 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC11: Input password
+2021-01-14 21:30:01,991 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC12: Input confirm password
+2021-01-14 21:30:02,700 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC13: Click Register button
+2021-01-14 21:30:05,456 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC14: Verify
+2021-01-14 21:30:05,588 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC15: Click log out link
+2021-01-14 21:30:08,459 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC01: Open Login page
+2021-01-14 21:30:09,909 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC02: Input email
+2021-01-14 21:30:10,654 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC03: Input password
+2021-01-14 21:30:11,343 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC04: Click Login button
+2021-01-14 21:30:13,370 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC05: Verify my account link
+2021-01-14 21:30:13,466 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC06: Verify logout link
+2021-01-14 21:30:13,533 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC07: verify Register link is undisplayed 
+2021-01-14 21:30:23,679 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC08: verify Login link is undisplayed
+2021-01-14 21:30:33,812 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC09: Click my account link
+2021-01-14 21:30:34,685 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - OS name = windows 7
+2021-01-14 21:30:35,410 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - ---------- QUIT BROWSER SUCCESS ----------
+2021-02-20 20:57:36,233 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC01: Open home page
+2021-02-20 20:57:36,253 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC02: Click Register link
+2021-02-20 20:57:38,039 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC03: Click Gender Male radio button
+2021-02-20 20:57:38,212 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC04: Input Firstname
+2021-02-20 20:57:38,928 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC05: Input Lastname 
+2021-02-20 20:57:39,624 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC06: Select day
+2021-02-20 20:57:39,851 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC07: Select month
+2021-02-20 20:57:40,020 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC08: Select year 
+2021-02-20 20:57:40,179 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC09: Input email
+2021-02-20 20:57:40,897 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC10: Input company name
+2021-02-20 20:57:41,607 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC11: Input password
+2021-02-20 20:57:42,332 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC12: Input confirm password
+2021-02-20 20:57:43,032 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC13: Click Register button
+2021-02-20 20:57:45,558 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC14: Verify
+2021-02-20 20:57:45,652 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC15: Click log out link
+2021-02-20 20:57:47,523 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC01: Open Login page
+2021-02-20 20:57:48,188 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC02: Input email
+2021-02-20 20:57:48,927 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC03: Input password
+2021-02-20 20:57:49,620 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC04: Click Login button
+2021-02-20 20:57:51,615 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC05: Verify my account link
+2021-02-20 20:57:51,709 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC06: Verify logout link
+2021-02-20 20:57:51,774 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC07: verify Register link is undisplayed 
+2021-02-20 20:58:01,885 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC08: verify Login link is undisplayed
+2021-02-20 20:58:11,975 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - Register - TC09: Click my account link
+2021-02-20 20:58:13,137 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - OS name = windows 7
+2021-02-20 20:58:13,895 INFO  com.nopcommerce.users.Level_13_Register_Login_Pattern_Object - ---------- QUIT BROWSER SUCCESS ----------

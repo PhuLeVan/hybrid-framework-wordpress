@@ -10,4 +10,9 @@ public class BasePageUI {
 	// Dynamic link
 	public static final String DYNAMIC_LINK = "//div[@class='listbox']//a[text()='%s']";
 	public static final String AJAX_LOADING_ICON = "//div[@id='ajaxBusy']/span";
+	public static final String DYNAMIC_RADIO_BUTTON_BY_ID = "//input[@id='%s']";
+	public static final String DYNAMIC_TEXTBOX_BY_ID = "//input[@id='%s']";
+	public static final String DYNAMIC_DROPDOWN_LIST_BY_NAME = "//select[@name='%s']";
+	public static final String DYNAMIC_BUTTON_BY_VALUE = "//input[@value='%s']";
+	
 }

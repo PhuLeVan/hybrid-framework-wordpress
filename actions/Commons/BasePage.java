@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
+import org.jsoup.Connection.Base;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -173,6 +174,11 @@ public class BasePage {
 	
 	public void selectItemInDropdown(WebDriver driver, String locator, String valueItem) {
 		Select select = new Select(getElement(driver, locator));
+		select.selectByVisibleText(valueItem);
+	}
+	
+	public void selectItemInDropdown(WebDriver driver, String locator, String valueItem, String... values) {
+		Select select = new Select(getElement(driver, getDynamicLocator(locator, values)));
 		select.selectByVisibleText(valueItem);
 	}
 	
@@ -455,7 +461,7 @@ public class BasePage {
 		explicitWait.until(ExpectedConditions.elementToBeClickable(getByXpath(locator)));
 	}
 	
-	public void waitForElementClickable(WebDriver driver, String locator, String values) {
+	public void waitForElementClickable(WebDriver driver, String locator, String... values) {
 		WebDriverWait explicitWait = new WebDriverWait(driver, longTimeout);
 		explicitWait.until(ExpectedConditions.elementToBeClickable(getByXpath(getDynamicLocator(locator, values))));
 	}
@@ -521,5 +527,23 @@ public class BasePage {
 		clickToElement(driver, BasePageUI.DYNAMIC_LINK, pageName);
 	}
 	
+	public void inputToTextboxByID(WebDriver driver, String textboxID, String value) {
+		waitForElementVisible(driver, BasePageUI.DYNAMIC_TEXTBOX_BY_ID, textboxID);
+		sendkeyToElement(driver, BasePageUI.DYNAMIC_TEXTBOX_BY_ID, value, textboxID);
+	}
 	
+	public void clickToRadioButtonByID(WebDriver driver, String radioID) {
+		waitForElementClickable(driver, BasePageUI.DYNAMIC_RADIO_BUTTON_BY_ID, radioID);
+		clickToElement(driver, BasePageUI.DYNAMIC_RADIO_BUTTON_BY_ID, radioID);
+	}
+	
+	public void clickToButtonByValue(WebDriver driver, String buttonValue) {
+		waitForElementClickable(driver, BasePageUI.DYNAMIC_BUTTON_BY_VALUE, buttonValue);
+		clickToElement(driver, BasePageUI.DYNAMIC_BUTTON_BY_VALUE, buttonValue);
+	}
+	
+	public void selectDropdownListByName(WebDriver driver, String dropdownListName, String value) {
+		waitForElementVisible(driver, BasePageUI.DYNAMIC_DROPDOWN_LIST_BY_NAME, dropdownListName);
+		selectItemInDropdown(driver, BasePageUI.DYNAMIC_DROPDOWN_LIST_BY_NAME, value, dropdownListName);
+	}
 }
