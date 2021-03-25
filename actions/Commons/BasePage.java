@@ -1,6 +1,7 @@
 package Commons;
 
 import java.util.List;
+import java.util.Random;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
@@ -16,13 +17,15 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import PageUIs.BasePageUI;
-import pageObjects.GeneratorManagerPage;
-import pageObjects.UserAddressesPO;
-import pageObjects.UserCustomerInfoPO;
-import pageObjects.UserMyProductReviewsPO;
-import pageObjects.UserOrdersPO;
-import pageObjects.UserRewardPointsPO;
+import PageUIs.NopCommerce.AdminProductsPageUI;
+import PageUIs.NopCommerce.NopCommerceBasePageUI;
+import PageUIs.OrangeHRM.OrangeHRMBasePageUI;
+import pageObjects.NopCommerce.GeneratorManagerPage;
+import pageObjects.NopCommerce.UserAddressesPO;
+import pageObjects.NopCommerce.UserCustomerInfoPO;
+import pageObjects.NopCommerce.UserMyProductReviewsPO;
+import pageObjects.NopCommerce.UserOrdersPO;
+import pageObjects.NopCommerce.UserRewardPointsPO;
 
 public class BasePage {
 	List<WebElement> elements;
@@ -302,6 +305,10 @@ public class BasePage {
 		return getElement(driver, locator).isSelected();
 	}
 	
+	public boolean isElementSelected(WebDriver driver, String locator, String... values) {
+		return getElement(driver, getDynamicLocator(locator, values)).isSelected();
+	}
+	
 	public void switchToFrame(WebDriver driver, String locator) {
 		driver.switchTo().frame(getElement(driver, locator));
 	}
@@ -466,48 +473,50 @@ public class BasePage {
 		explicitWait.until(ExpectedConditions.elementToBeClickable(getByXpath(getDynamicLocator(locator, values))));
 	}
 	
+	/* NopCommerce Project*/
+
 	public void waitForAjaxLoadingIconInvisible(WebDriver driver) {
-		waitForElementInvisible(driver, BasePageUI.AJAX_LOADING_ICON);
+		waitForElementInvisible(driver, NopCommerceBasePageUI.AJAX_LOADING_ICON);
 	}
-	
+
 	// TC Level_06
 	public UserCustomerInfoPO clickToCustomerInfoLink(WebDriver driver) {
-		waitForElementClickable(driver, BasePageUI.CUSTOMER_INFO_LINK);
-		clickToElement(driver, BasePageUI.CUSTOMER_INFO_LINK);
+		waitForElementClickable(driver, NopCommerceBasePageUI.CUSTOMER_INFO_LINK);
+		clickToElement(driver, NopCommerceBasePageUI.CUSTOMER_INFO_LINK);
 		return GeneratorManagerPage.getUserCustomerInfoPage(driver);
 	}
 	
 	// TC Level_06
 	public UserAddressesPO clickToAddressesLink(WebDriver driver) {
-		waitForElementClickable(driver, BasePageUI.ADDRESSES_LINK);
-		clickToElement(driver, BasePageUI.ADDRESSES_LINK);
+		waitForElementClickable(driver, NopCommerceBasePageUI.ADDRESSES_LINK);
+		clickToElement(driver, NopCommerceBasePageUI.ADDRESSES_LINK);
 		return GeneratorManagerPage.getUserAddressesPage(driver);
 	}
 	
 	// TC Level_06
 	public UserOrdersPO clickToOrdersLink(WebDriver driver) {
-		waitForElementClickable(driver, BasePageUI.ORDERS_LINK);
-		clickToElement(driver, BasePageUI.ORDERS_LINK);	
+		waitForElementClickable(driver, NopCommerceBasePageUI.ORDERS_LINK);
+		clickToElement(driver, NopCommerceBasePageUI.ORDERS_LINK);	
 		return GeneratorManagerPage.getUserOrdersPage(driver);
 	}
 	
 	// TC Level_06
 	public UserMyProductReviewsPO clickToMyProductReviewsLink(WebDriver driver) {
-		waitForElementClickable(driver, BasePageUI.MY_PRODUCT_REVIEWS_LINK);
-		clickToElement(driver, BasePageUI.MY_PRODUCT_REVIEWS_LINK);
+		waitForElementClickable(driver, NopCommerceBasePageUI.MY_PRODUCT_REVIEWS_LINK);
+		clickToElement(driver, NopCommerceBasePageUI.MY_PRODUCT_REVIEWS_LINK);
 		return GeneratorManagerPage.getUserMyProductReviewsPage(driver);
 	}
 	
 	// TC Level_06
 	public UserRewardPointsPO clickToRewardPointsLink(WebDriver driver) {
-		waitForElementClickable(driver, BasePageUI.REWARD_POINTS_LINK);
-		clickToElement(driver, BasePageUI.REWARD_POINTS_LINK);
+		waitForElementClickable(driver, NopCommerceBasePageUI.REWARD_POINTS_LINK);
+		clickToElement(driver, NopCommerceBasePageUI.REWARD_POINTS_LINK);
 		return GeneratorManagerPage.getUserRewardPointsPage(driver);
 	}
 	
 	public BasePage openLinkByPageName(WebDriver driver, String pageName) {
-		waitForElementClickable(driver, BasePageUI.DYNAMIC_LINK, pageName);
-		clickToElement(driver, BasePageUI.DYNAMIC_LINK, pageName);
+		waitForElementClickable(driver, NopCommerceBasePageUI.DYNAMIC_LINK, pageName);
+		clickToElement(driver, NopCommerceBasePageUI.DYNAMIC_LINK, pageName);
 		switch (pageName) {
 		case "Addresses":
 			return GeneratorManagerPage.getUserAddressesPage(driver);
@@ -523,27 +532,46 @@ public class BasePage {
 	}
 	
 	public void openLinkWithPageName(WebDriver driver, String pageName) {
-		waitForElementClickable(driver, BasePageUI.DYNAMIC_LINK, pageName);
-		clickToElement(driver, BasePageUI.DYNAMIC_LINK, pageName);
+		waitForElementClickable(driver, NopCommerceBasePageUI.DYNAMIC_LINK, pageName);
+		clickToElement(driver, NopCommerceBasePageUI.DYNAMIC_LINK, pageName);
 	}
 	
 	public void inputToTextboxByID(WebDriver driver, String textboxID, String value) {
-		waitForElementVisible(driver, BasePageUI.DYNAMIC_TEXTBOX_BY_ID, textboxID);
-		sendkeyToElement(driver, BasePageUI.DYNAMIC_TEXTBOX_BY_ID, value, textboxID);
+		waitForElementVisible(driver, NopCommerceBasePageUI.DYNAMIC_TEXTBOX_BY_ID, textboxID);
+		sendkeyToElement(driver, NopCommerceBasePageUI.DYNAMIC_TEXTBOX_BY_ID, value, textboxID);
 	}
 	
 	public void clickToRadioButtonByID(WebDriver driver, String radioID) {
-		waitForElementClickable(driver, BasePageUI.DYNAMIC_RADIO_BUTTON_BY_ID, radioID);
-		clickToElement(driver, BasePageUI.DYNAMIC_RADIO_BUTTON_BY_ID, radioID);
+		waitForElementClickable(driver, NopCommerceBasePageUI.DYNAMIC_RADIO_BUTTON_BY_ID, radioID);
+		clickToElement(driver, NopCommerceBasePageUI.DYNAMIC_RADIO_BUTTON_BY_ID, radioID);
 	}
 	
 	public void clickToButtonByValue(WebDriver driver, String buttonValue) {
-		waitForElementClickable(driver, BasePageUI.DYNAMIC_BUTTON_BY_VALUE, buttonValue);
-		clickToElement(driver, BasePageUI.DYNAMIC_BUTTON_BY_VALUE, buttonValue);
+		waitForElementClickable(driver, NopCommerceBasePageUI.DYNAMIC_BUTTON_BY_VALUE, buttonValue);
+		clickToElement(driver, NopCommerceBasePageUI.DYNAMIC_BUTTON_BY_VALUE, buttonValue);
 	}
 	
 	public void selectDropdownListByName(WebDriver driver, String dropdownListName, String value) {
-		waitForElementVisible(driver, BasePageUI.DYNAMIC_DROPDOWN_LIST_BY_NAME, dropdownListName);
-		selectItemInDropdown(driver, BasePageUI.DYNAMIC_DROPDOWN_LIST_BY_NAME, value, dropdownListName);
+		waitForElementVisible(driver, NopCommerceBasePageUI.DYNAMIC_DROPDOWN_LIST_BY_NAME, dropdownListName);
+		selectItemInDropdown(driver, NopCommerceBasePageUI.DYNAMIC_DROPDOWN_LIST_BY_NAME, value, dropdownListName);
 	}
+	
+	/*Orange HRM Project*/
+	
+	public void openMenuPageByName(WebDriver driver, String pageName) {
+		waitForElementClickable(driver, OrangeHRMBasePageUI.DYNAMIC_MENU_LINK, pageName);
+		clickToElement(driver, OrangeHRMBasePageUI.DYNAMIC_MENU_LINK, pageName);
+	}
+	
+	public void clickToButtonByNameAtFormHeader(WebDriver driver, String headerName, String buttonName) {
+		waitForElementClickable(driver, OrangeHRMBasePageUI.DYNAMIC_BUTTON_BY_NAME_AT_FORM_HEADER, headerName, buttonName);
+		clickToElement(driver, OrangeHRMBasePageUI.DYNAMIC_BUTTON_BY_NAME_AT_FORM_HEADER, headerName, buttonName);
+	}
+	
+	public boolean isInfomationDisplayAtColumnNameAndRowName(WebDriver driver, String tableID, String columnName, String rowNumber, String expectedValue) {
+		int getColumnIndex = countElementSize(driver, OrangeHRMBasePageUI.DYNAMIC_TABLE_COLUMN_NAME_SIBLING, tableID, columnName) + 1;
+		String actualValues = getElementText(driver, OrangeHRMBasePageUI.DYNAMIC_TABLE_CELL_VALUE_BY_COLUMN_AND_ROW_INDEX, rowNumber, String.valueOf(getColumnIndex));
+		return actualValues.equals(expectedValue);
+	}
+
 }

@@ -1,4 +1,4 @@
-package pageObjects;
+package pageObjects.NopCommerce;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import Commons.BasePage;
-import PageUIs.AdminProductsPageUI;
+import PageUIs.NopCommerce.AdminProductsPageUI;
 
 public class AdminProductsPO extends BasePage{
 	WebDriver driver;

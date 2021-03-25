@@ -1,6 +1,7 @@
 package Commons;
 
 import java.util.Collections;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.logging.Log;
@@ -213,5 +214,10 @@ public class BaseTest {
 
 	protected boolean verifyEquals(Object actual, Object expected) {
 		return checkEquals(actual, expected);
+	}
+	
+	protected int getRandomNumber() {
+		Random random = new Random();
+		return random.nextInt(9999);
 	}
 }

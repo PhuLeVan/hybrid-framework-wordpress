@@ -6,10 +6,10 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
 import Commons.BaseTest;
-import pageObjects.GeneratorManagerPage;
-import pageObjects.UserHomePO;
-import pageObjects.UserLoginPO;
-import pageObjects.UserRegisterPO;
+import pageObjects.NopCommerce.GeneratorManagerPage;
+import pageObjects.NopCommerce.UserHomePO;
+import pageObjects.NopCommerce.UserLoginPO;
+import pageObjects.NopCommerce.UserRegisterPO;
 
 public class Common_01_Register extends BaseTest{
 	WebDriver driver;

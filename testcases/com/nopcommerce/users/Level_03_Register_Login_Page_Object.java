@@ -12,10 +12,10 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import pageObjects.UserCustomerInfoPO;
-import pageObjects.UserHomePO;
-import pageObjects.UserLoginPO;
-import pageObjects.UserRegisterPO;
+import pageObjects.NopCommerce.UserCustomerInfoPO;
+import pageObjects.NopCommerce.UserHomePO;
+import pageObjects.NopCommerce.UserLoginPO;
+import pageObjects.NopCommerce.UserRegisterPO;
 
 
 public class Level_03_Register_Login_Page_Object {

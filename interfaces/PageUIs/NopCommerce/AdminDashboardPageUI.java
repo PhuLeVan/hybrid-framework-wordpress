@@ -1,4 +1,4 @@
-package PageUIs;
+package PageUIs.NopCommerce;
 
 public class AdminDashboardPageUI {
 	public static final String CATALOG_SIDEBAR_LINK = "//span[text()='Catalog']";

@@ -1,4 +1,4 @@
-package PageUIs;
+package PageUIs.NopCommerce;
 
 public class AdminProductsPageUI {
 	public static final String PAGE_AT_TABLE_BY_INDEX = "//li[@class='paginate_button ']/a[text()='%s']";

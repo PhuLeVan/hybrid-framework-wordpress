@@ -10,11 +10,11 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import Commons.BaseTest;
-import pageObjects.UserCustomerInfoPO;
-import pageObjects.GeneratorManagerPage;
-import pageObjects.UserHomePO;
-import pageObjects.UserLoginPO;
-import pageObjects.UserRegisterPO;
+import pageObjects.NopCommerce.GeneratorManagerPage;
+import pageObjects.NopCommerce.UserCustomerInfoPO;
+import pageObjects.NopCommerce.UserHomePO;
+import pageObjects.NopCommerce.UserLoginPO;
+import pageObjects.NopCommerce.UserRegisterPO;
 
 public class Level_04_Register_Login_Multiple_Browsers extends BaseTest {
 	WebDriver driver;

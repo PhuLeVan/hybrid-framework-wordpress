@@ -1,4 +1,4 @@
-package PageUIs;
+package PageUIs.NopCommerce;
 
 public class UserLoginPageUI {
 	public static final String EMAIL_TEXTBOX = "//input[@id='Email']";

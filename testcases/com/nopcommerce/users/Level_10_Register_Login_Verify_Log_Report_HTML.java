@@ -10,15 +10,15 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import Commons.BaseTest;
-import pageObjects.UserAddressesPO;
-import pageObjects.UserCustomerInfoPO;
-import pageObjects.GeneratorManagerPage;
-import pageObjects.UserHomePO;
-import pageObjects.UserLoginPO;
-import pageObjects.UserMyProductReviewsPO;
-import pageObjects.UserOrdersPO;
-import pageObjects.UserRegisterPO;
-import pageObjects.UserRewardPointsPO;
+import pageObjects.NopCommerce.GeneratorManagerPage;
+import pageObjects.NopCommerce.UserAddressesPO;
+import pageObjects.NopCommerce.UserCustomerInfoPO;
+import pageObjects.NopCommerce.UserHomePO;
+import pageObjects.NopCommerce.UserLoginPO;
+import pageObjects.NopCommerce.UserMyProductReviewsPO;
+import pageObjects.NopCommerce.UserOrdersPO;
+import pageObjects.NopCommerce.UserRegisterPO;
+import pageObjects.NopCommerce.UserRewardPointsPO;
 
 public class Level_10_Register_Login_Verify_Log_Report_HTML extends BaseTest {
 	WebDriver driver;

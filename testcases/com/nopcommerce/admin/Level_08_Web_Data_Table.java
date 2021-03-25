@@ -5,10 +5,10 @@ import org.testng.Assert;
 import org.testng.annotations.*;
 
 import Commons.BaseTest;
-import pageObjects.AdminDashboardPO;
-import pageObjects.AdminLoginPO;
-import pageObjects.AdminProductsPO;
-import pageObjects.GeneratorManagerPage;
+import pageObjects.NopCommerce.AdminDashboardPO;
+import pageObjects.NopCommerce.AdminLoginPO;
+import pageObjects.NopCommerce.AdminProductsPO;
+import pageObjects.NopCommerce.GeneratorManagerPage;
 
 public class Level_08_Web_Data_Table extends BaseTest {
 	WebDriver driver;

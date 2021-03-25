@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Orange HRM" parallel="false">
+	
+	<listeners>
+		<listeners class-name="commons.MethodListener"/>
+		<listeners class-name="org.uncommons.reportng.HTMLReporter"/>
+		<listeners class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+	</listeners>
+	
+	<test name="Run on CHROME UI">
+		<parameter name="browser" value="chrome_ui" />
+		<parameter name="url" value="https://opensource-demo.orangehrmlive.com/index.php/dashboard"/>
+		<classes>
+			<class name="com.orangehrm.employee.Employee_TC01_Add_Edit_Employee_User" />
+		</classes>
+	</test>
+
+
+
+</suite> 
