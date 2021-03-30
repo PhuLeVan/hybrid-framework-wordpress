@@ -13,17 +13,17 @@ public class LoginPageObject extends BasePage{
 	}
 
 	public void inputToUsernameTextbox(String username) {
-		waitForElementVisible(driver, LoginPageUI.USERNAME_TEXTBOX);
+		waitToElementVisible(driver, LoginPageUI.USERNAME_TEXTBOX);
 		sendkeyToElement(driver, LoginPageUI.USERNAME_TEXTBOX, username);
 	}
 
 	public void inputToPasswordTextbox(String password) {
-		waitForElementVisible(driver, LoginPageUI.PASSWORD_TEXTBOX);
+		waitToElementVisible(driver, LoginPageUI.PASSWORD_TEXTBOX);
 		sendkeyToElement(driver, LoginPageUI.PASSWORD_TEXTBOX, password);
 	}
 
 	public DashboardPageObject clickToLoginButton() {
-		waitForElementClickable(driver, LoginPageUI.LOGIN_BUTTON);
+		waitToElementClickable(driver, LoginPageUI.LOGIN_BUTTON);
 		clickToElement(driver, LoginPageUI.LOGIN_BUTTON);
 		return PageGeneratorManager.getDashboardPage(driver);
 	}

@@ -13,17 +13,17 @@ public class AdminLoginPO extends BasePage{
 	}
 	
 	public void inputToEmailTextbox(String email) {
-		waitForElementClickable(driver, AdminLoginPageUI.EMAIL_TEXTBOX);
+		waitToElementClickable(driver, AdminLoginPageUI.EMAIL_TEXTBOX);
 		sendkeyToElement(driver, AdminLoginPageUI.EMAIL_TEXTBOX, email);
 	}
 	
 	public void inputToPasswordTextbox(String password) {
-		waitForElementClickable(driver, AdminLoginPageUI.PASSWORD_TEXTBOX);
+		waitToElementClickable(driver, AdminLoginPageUI.PASSWORD_TEXTBOX);
 		sendkeyToElement(driver, AdminLoginPageUI.PASSWORD_TEXTBOX, password);
 	}
 	
 	public AdminDashboardPO clickToLoginButton() {
-		waitForElementClickable(driver, AdminLoginPageUI.LOGIN_BUTTON);
+		waitToElementClickable(driver, AdminLoginPageUI.LOGIN_BUTTON);
 		clickToElement(driver, AdminLoginPageUI.LOGIN_BUTTON);
 		return GeneratorManagerPage.getAdminDashboardPage(driver);
 	}

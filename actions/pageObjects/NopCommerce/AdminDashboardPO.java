@@ -13,9 +13,9 @@ public class AdminDashboardPO extends BasePage{
 	}
 
 	public AdminProductsPO openProductsPage() {
-		waitForElementClickable(driver, AdminDashboardPageUI.CATALOG_SIDEBAR_LINK);
+		waitToElementClickable(driver, AdminDashboardPageUI.CATALOG_SIDEBAR_LINK);
 		clickToElement(driver, AdminDashboardPageUI.CATALOG_SIDEBAR_LINK);
-		waitForElementClickable(driver, AdminDashboardPageUI.PRODUCTS_SIDEBAR_LINK);
+		waitToElementClickable(driver, AdminDashboardPageUI.PRODUCTS_SIDEBAR_LINK);
 		clickToElement(driver, AdminDashboardPageUI.PRODUCTS_SIDEBAR_LINK);
 		return GeneratorManagerPage.getAdminProductsPage(driver);
 	}

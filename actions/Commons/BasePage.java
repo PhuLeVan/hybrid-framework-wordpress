@@ -65,7 +65,7 @@ public class BasePage {
 		driver.navigate().refresh();
 	}
 	
-	public void waitForAlertPresence(WebDriver driver) {
+	public void waitToAlertPresence(WebDriver driver) {
 		WebDriverWait explicitWait = new WebDriverWait(driver, longTimeout);
 		explicitWait.until(ExpectedConditions.alertIsPresent());
 	}
@@ -432,22 +432,22 @@ public class BasePage {
 		return false;
 	}
 
-	public void waitForElementVisible(WebDriver driver, String locator) {
+	public void waitToElementVisible(WebDriver driver, String locator) {
 		WebDriverWait explicitWait = new WebDriverWait(driver, longTimeout);
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(getByXpath(locator)));
 	}
 	
-	public void waitForElementVisible(WebDriver driver, String locator, String... values) {
+	public void waitToElementVisible(WebDriver driver, String locator, String... values) {
 		WebDriverWait explicitWait = new WebDriverWait(driver, longTimeout);
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(getByXpath(getDynamicLocator(locator, values))));
 	}
 
-	public void waitForListElementVisible(WebDriver driver, String locator) {
+	public void waitToListElementVisible(WebDriver driver, String locator) {
 		WebDriverWait explicitWait = new WebDriverWait(driver, longTimeout);
 		explicitWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(getByXpath(locator)));
 	}
 	
-	public void waitForElementInvisible(WebDriver driver, String locator) {
+	public void waitToElementInvisible(WebDriver driver, String locator) {
 		WebDriverWait explicitWait = new WebDriverWait(driver, shortTimeout);
 		overideImplicitWait(driver, shortTimeout);
 		explicitWait.until(ExpectedConditions.invisibilityOfElementLocated(getByXpath(locator)));
@@ -458,64 +458,64 @@ public class BasePage {
 		driver.manage().timeouts().implicitlyWait(timeout, TimeUnit.SECONDS);
 	}
 	
-	public void waitForElementInvisible(WebDriver driver, String locator, String... values) {
+	public void waitToElementInvisible(WebDriver driver, String locator, String... values) {
 		WebDriverWait explicitWait = new WebDriverWait(driver, longTimeout);
 		explicitWait.until(ExpectedConditions.invisibilityOfElementLocated(getByXpath(getDynamicLocator(locator, values))));
 	}
 	
-	public void waitForElementClickable(WebDriver driver, String locator) {
+	public void waitToElementClickable(WebDriver driver, String locator) {
 		WebDriverWait explicitWait = new WebDriverWait(driver, longTimeout);
 		explicitWait.until(ExpectedConditions.elementToBeClickable(getByXpath(locator)));
 	}
 	
-	public void waitForElementClickable(WebDriver driver, String locator, String... values) {
+	public void waitToElementClickable(WebDriver driver, String locator, String... values) {
 		WebDriverWait explicitWait = new WebDriverWait(driver, longTimeout);
 		explicitWait.until(ExpectedConditions.elementToBeClickable(getByXpath(getDynamicLocator(locator, values))));
 	}
 	
 	/* NopCommerce Project*/
 
-	public void waitForAjaxLoadingIconInvisible(WebDriver driver) {
-		waitForElementInvisible(driver, NopCommerceBasePageUI.AJAX_LOADING_ICON);
+	public void waitToAjaxLoadingIconInvisible(WebDriver driver) {
+		waitToElementInvisible(driver, NopCommerceBasePageUI.AJAX_LOADING_ICON);
 	}
 
 	// TC Level_06
 	public UserCustomerInfoPO clickToCustomerInfoLink(WebDriver driver) {
-		waitForElementClickable(driver, NopCommerceBasePageUI.CUSTOMER_INFO_LINK);
+		waitToElementClickable(driver, NopCommerceBasePageUI.CUSTOMER_INFO_LINK);
 		clickToElement(driver, NopCommerceBasePageUI.CUSTOMER_INFO_LINK);
 		return GeneratorManagerPage.getUserCustomerInfoPage(driver);
 	}
 	
 	// TC Level_06
 	public UserAddressesPO clickToAddressesLink(WebDriver driver) {
-		waitForElementClickable(driver, NopCommerceBasePageUI.ADDRESSES_LINK);
+		waitToElementClickable(driver, NopCommerceBasePageUI.ADDRESSES_LINK);
 		clickToElement(driver, NopCommerceBasePageUI.ADDRESSES_LINK);
 		return GeneratorManagerPage.getUserAddressesPage(driver);
 	}
 	
 	// TC Level_06
 	public UserOrdersPO clickToOrdersLink(WebDriver driver) {
-		waitForElementClickable(driver, NopCommerceBasePageUI.ORDERS_LINK);
+		waitToElementClickable(driver, NopCommerceBasePageUI.ORDERS_LINK);
 		clickToElement(driver, NopCommerceBasePageUI.ORDERS_LINK);	
 		return GeneratorManagerPage.getUserOrdersPage(driver);
 	}
 	
 	// TC Level_06
 	public UserMyProductReviewsPO clickToMyProductReviewsLink(WebDriver driver) {
-		waitForElementClickable(driver, NopCommerceBasePageUI.MY_PRODUCT_REVIEWS_LINK);
+		waitToElementClickable(driver, NopCommerceBasePageUI.MY_PRODUCT_REVIEWS_LINK);
 		clickToElement(driver, NopCommerceBasePageUI.MY_PRODUCT_REVIEWS_LINK);
 		return GeneratorManagerPage.getUserMyProductReviewsPage(driver);
 	}
 	
 	// TC Level_06
 	public UserRewardPointsPO clickToRewardPointsLink(WebDriver driver) {
-		waitForElementClickable(driver, NopCommerceBasePageUI.REWARD_POINTS_LINK);
+		waitToElementClickable(driver, NopCommerceBasePageUI.REWARD_POINTS_LINK);
 		clickToElement(driver, NopCommerceBasePageUI.REWARD_POINTS_LINK);
 		return GeneratorManagerPage.getUserRewardPointsPage(driver);
 	}
 	
 	public BasePage openLinkByPageName(WebDriver driver, String pageName) {
-		waitForElementClickable(driver, NopCommerceBasePageUI.DYNAMIC_LINK, pageName);
+		waitToElementClickable(driver, NopCommerceBasePageUI.DYNAMIC_LINK, pageName);
 		clickToElement(driver, NopCommerceBasePageUI.DYNAMIC_LINK, pageName);
 		switch (pageName) {
 		case "Addresses":
@@ -532,39 +532,39 @@ public class BasePage {
 	}
 	
 	public void openLinkWithPageName(WebDriver driver, String pageName) {
-		waitForElementClickable(driver, NopCommerceBasePageUI.DYNAMIC_LINK, pageName);
+		waitToElementClickable(driver, NopCommerceBasePageUI.DYNAMIC_LINK, pageName);
 		clickToElement(driver, NopCommerceBasePageUI.DYNAMIC_LINK, pageName);
 	}
 	
 	public void inputToTextboxByID(WebDriver driver, String textboxID, String value) {
-		waitForElementVisible(driver, NopCommerceBasePageUI.DYNAMIC_TEXTBOX_BY_ID, textboxID);
+		waitToElementVisible(driver, NopCommerceBasePageUI.DYNAMIC_TEXTBOX_BY_ID, textboxID);
 		sendkeyToElement(driver, NopCommerceBasePageUI.DYNAMIC_TEXTBOX_BY_ID, value, textboxID);
 	}
 	
 	public void clickToRadioButtonByID(WebDriver driver, String radioID) {
-		waitForElementClickable(driver, NopCommerceBasePageUI.DYNAMIC_RADIO_BUTTON_BY_ID, radioID);
+		waitToElementClickable(driver, NopCommerceBasePageUI.DYNAMIC_RADIO_BUTTON_BY_ID, radioID);
 		clickToElement(driver, NopCommerceBasePageUI.DYNAMIC_RADIO_BUTTON_BY_ID, radioID);
 	}
 	
 	public void clickToButtonByValue(WebDriver driver, String buttonValue) {
-		waitForElementClickable(driver, NopCommerceBasePageUI.DYNAMIC_BUTTON_BY_VALUE, buttonValue);
+		waitToElementClickable(driver, NopCommerceBasePageUI.DYNAMIC_BUTTON_BY_VALUE, buttonValue);
 		clickToElement(driver, NopCommerceBasePageUI.DYNAMIC_BUTTON_BY_VALUE, buttonValue);
 	}
 	
 	public void selectDropdownListByName(WebDriver driver, String dropdownListName, String value) {
-		waitForElementVisible(driver, NopCommerceBasePageUI.DYNAMIC_DROPDOWN_LIST_BY_NAME, dropdownListName);
+		waitToElementVisible(driver, NopCommerceBasePageUI.DYNAMIC_DROPDOWN_LIST_BY_NAME, dropdownListName);
 		selectItemInDropdown(driver, NopCommerceBasePageUI.DYNAMIC_DROPDOWN_LIST_BY_NAME, value, dropdownListName);
 	}
 	
 	/*Orange HRM Project*/
 	
 	public void openMenuPageByName(WebDriver driver, String pageName) {
-		waitForElementClickable(driver, OrangeHRMBasePageUI.DYNAMIC_MENU_LINK, pageName);
+		waitToElementClickable(driver, OrangeHRMBasePageUI.DYNAMIC_MENU_LINK, pageName);
 		clickToElement(driver, OrangeHRMBasePageUI.DYNAMIC_MENU_LINK, pageName);
 	}
 	
 	public void clickToButtonByNameAtFormHeader(WebDriver driver, String headerName, String buttonName) {
-		waitForElementClickable(driver, OrangeHRMBasePageUI.DYNAMIC_BUTTON_BY_NAME_AT_FORM_HEADER, headerName, buttonName);
+		waitToElementClickable(driver, OrangeHRMBasePageUI.DYNAMIC_BUTTON_BY_NAME_AT_FORM_HEADER, headerName, buttonName);
 		clickToElement(driver, OrangeHRMBasePageUI.DYNAMIC_BUTTON_BY_NAME_AT_FORM_HEADER, headerName, buttonName);
 	}
 	

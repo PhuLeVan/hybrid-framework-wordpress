@@ -13,39 +13,39 @@ public class UserHomePO extends BasePage {
 	}
 
 	public UserRegisterPO clickToRegisterLink() {
-		waitForElementClickable(driver, UserHomePageUI.REGISTER_LINK);
+		waitToElementClickable(driver, UserHomePageUI.REGISTER_LINK);
 		clickToElement(driver, UserHomePageUI.REGISTER_LINK);
 		return GeneratorManagerPage.getUserRegisterPage(driver);
 	}
 
 	public UserLoginPO clickToLoginLink() {
-		waitForElementClickable(driver, UserHomePageUI.LOGIN_LINK);
+		waitToElementClickable(driver, UserHomePageUI.LOGIN_LINK);
 		clickToElement(driver, UserHomePageUI.LOGIN_LINK);
 		return GeneratorManagerPage.getUserLoginPage(driver);
 	}
 
 	public boolean isMyAccountLinkDisplayed() {
-		waitForElementVisible(driver, UserHomePageUI.MY_ACCOUNT_LINK);
+		waitToElementVisible(driver, UserHomePageUI.MY_ACCOUNT_LINK);
 		return isElementDisplay(driver, UserHomePageUI.MY_ACCOUNT_LINK);
 	}
 
 	public boolean isLogoutLinkDisplayed() {
-		waitForElementVisible(driver, UserHomePageUI.LOGOUT_LINK);
+		waitToElementVisible(driver, UserHomePageUI.LOGOUT_LINK);
 		return isElementDisplay(driver, UserHomePageUI.LOGOUT_LINK);
 	}
 	
 	public boolean isRegisterLinkUnDisplayed() {
-		waitForElementInvisible(driver, UserHomePageUI.REGISTER_LINK);
+		waitToElementInvisible(driver, UserHomePageUI.REGISTER_LINK);
 		return isElementUnDisplay(driver, UserHomePageUI.REGISTER_LINK);
 	}
 	
 	public boolean isLoginLinkUnDisplayed() {
-		waitForElementInvisible(driver, UserHomePageUI.LOGIN_LINK);
+		waitToElementInvisible(driver, UserHomePageUI.LOGIN_LINK);
 		return isElementUnDisplay(driver, UserHomePageUI.LOGIN_LINK);
 	}
 	
 	public UserCustomerInfoPO clickToMyAccountLink() {
-		waitForElementClickable(driver, UserHomePageUI.MY_ACCOUNT_LINK);
+		waitToElementClickable(driver, UserHomePageUI.MY_ACCOUNT_LINK);
 		clickToElement(driver, UserHomePageUI.MY_ACCOUNT_LINK);
 		return GeneratorManagerPage.getUserCustomerInfoPage(driver);
 	}

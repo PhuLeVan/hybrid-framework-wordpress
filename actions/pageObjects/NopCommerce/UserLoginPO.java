@@ -13,18 +13,18 @@ public class UserLoginPO extends BasePage{
 	}
 
 	public void inputToEmailTextbox(String email) {
-		waitForElementVisible(driver, UserLoginPageUI.EMAIL_TEXTBOX);
+		waitToElementVisible(driver, UserLoginPageUI.EMAIL_TEXTBOX);
 		sendkeyToElement(driver, UserLoginPageUI.EMAIL_TEXTBOX, email);
 	}
 
 	public void inputToPasswordTextbox(String password) {
-		waitForElementVisible(driver, UserLoginPageUI.PASSWORD_TEXTBOX);
+		waitToElementVisible(driver, UserLoginPageUI.PASSWORD_TEXTBOX);
 		sendkeyToElement(driver, UserLoginPageUI.PASSWORD_TEXTBOX, password);
 		
 	}
 
 	public UserHomePO clickToLoginButton() {
-		waitForElementClickable(driver, UserLoginPageUI.LOGIN_BUTTON);
+		waitToElementClickable(driver, UserLoginPageUI.LOGIN_BUTTON);
 		clickToElement(driver, UserLoginPageUI.LOGIN_BUTTON);
 		return GeneratorManagerPage.getUserHomepage(driver);
 	}

@@ -46,7 +46,7 @@ public class Level_08_Web_Data_Table extends BaseTest {
 	
 	@Test
 	public void TC_02_Select_Deselect_All() {
-		productPage.waitForAjaxLoadingIconInvisible(driver);
+		productPage.waitToAjaxLoadingIconInvisible(driver);
 		
 		productPage.checkToSelectAllCheckbox();
 		productPage.allProductCheckboxesChecked();

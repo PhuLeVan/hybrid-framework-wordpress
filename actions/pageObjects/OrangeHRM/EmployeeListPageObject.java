@@ -13,7 +13,7 @@ public class EmployeeListPageObject extends BasePage{
 	}
 
 	public EmployeeDetailPageObject clickToAddButton() {
-		waitForElementClickable(driver, EmployeeListPageUI.ADD_BUTTON);
+		waitToElementClickable(driver, EmployeeListPageUI.ADD_BUTTON);
 		clickToElement(driver, EmployeeListPageUI.ADD_BUTTON);
 		return PageGeneratorManager.getEmployeeDetailPage(driver);
 	}
